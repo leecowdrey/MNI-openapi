@@ -763,61 +763,7 @@
             "$ref": "#/components/responses/UnauthorizedError"
           },
           "404": {
-            "$ref": "#/components/responses/NotFound",
-            "patch": {
-              "summary": "Update aspects of a single alert",
-              "security": [
-                {
-                  "openId": [
-                    "write:mni_internal"
-                  ]
-                }
-              ],
-              "operationId": "updateSingleAlert",
-              "tags": [
-                "Alerts"
-              ],
-              "parameters": [
-                {
-                  "$ref": "#/components/parameters/alertId"
-                }
-              ],
-              "requestBody": {
-                "required": true,
-                "content": {
-                  "application/json": {
-                    "schema": {
-                      "properties": {
-                        "description": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "examples": {
-                      "sample": {
-                        "value": {
-                          "description": "Alert definition for coordinate creep"
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              "responses": {
-                "204": {
-                  "$ref": "#/components/responses/NoContent"
-                },
-                "400": {
-                  "$ref": "#/components/responses/BadRequest"
-                },
-                "401": {
-                  "$ref": "#/components/responses/UnauthorizedError"
-                },
-                "404": {
-                  "$ref": "#/components/responses/NotFound"
-                }
-              }
-            }
+            "$ref": "#/components/responses/NotFound"
           }
         }
       },
