@@ -13416,6 +13416,62 @@
         }
       }
     },
+    "/trench/premisesPassed/{trenchId}": {
+      "get": {
+        "summary": "number of premises passed for specified trench",
+        "security": [
+          {
+            "openId": [
+              "read:mni_trench"
+            ]
+          }
+        ],
+        "operationId": "getTrenchPremisesPassed",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/trenchId"
+          },
+          {
+            "$ref": "#/components/parameters/dateTime"
+          }
+        ],
+        "tags": [
+          "Trenches"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "passed": {
+                      "type": "number",
+                      "format": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "examples": {
+                  "sample": {
+                    "value": {
+                      "passed": 20
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
     "/admin/data": {
       "get": {
         "summary": "Export data settings",
