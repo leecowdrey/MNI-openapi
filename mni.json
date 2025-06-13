@@ -1051,7 +1051,7 @@
         }
       }
     },
-    "/alert/cve/{cveId}": {
+    "/cve/{cveId}": {
       "get": {
         "summary": "List single CVE details",
         "security": [
@@ -1199,7 +1199,7 @@
         }
       }
     },
-    "/alert/cve": {
+    "/cve": {
       "get": {
         "summary": "List all CVE for known vendors",
         "security": [
