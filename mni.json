@@ -8856,6 +8856,10 @@
                         "description": "software firmware/image version",
                         "type": "string"
                       },
+                      "config": {
+                        "description": "CLI, JSON or XML (NETCONF/YANG) configuration, *note*: is stored automatically in compressed format\n",
+                        "type": "string"
+                      },
                       "ports": {
                         "type": "array",
                         "minItems": 1,
@@ -9171,6 +9175,10 @@
                     },
                     "version": {
                       "description": "software firmware/image version",
+                      "type": "string"
+                    },
+                    "config": {
+                      "description": "CLI, JSON or XML (NETCONF/YANG) configuration, *note*: is stored automatically in compressed format\n",
                       "type": "string"
                     },
                     "ports": {
@@ -9715,6 +9723,10 @@
                     "description": "software firmware/image version",
                     "type": "string"
                   },
+                  "config": {
+                    "description": "CLI, JSON or XML (NETCONF/YANG) configuration, *note*: is stored automatically in compressed format\n",
+                    "type": "string"
+                  },
                   "ports": {
                     "type": "array",
                     "minItems": 1,
@@ -10086,6 +10098,10 @@
                       "description": "software firmware/image version",
                       "type": "string"
                     },
+                    "config": {
+                      "description": "CLI, JSON or XML (NETCONF/YANG) configuration, *note*: is stored automatically in compressed format\n",
+                      "type": "string"
+                    },
                     "ports": {
                       "type": "array",
                       "minItems": 1,
@@ -10399,6 +10415,10 @@
                     "description": "software firmware/image version",
                     "type": "string"
                   },
+                  "config": {
+                    "description": "CLI, JSON or XML (NETCONF/YANG) configuration, *note*: is stored automatically in compressed format\n",
+                    "type": "string"
+                  },
                   "ports": {
                     "type": "array",
                     "minItems": 1,
@@ -10700,6 +10720,10 @@
                   },
                   "version": {
                     "description": "software firmware/image version",
+                    "type": "string"
+                  },
+                  "config": {
+                    "description": "CLI, JSON or XML (NETCONF/YANG) configuration, *note*: is stored automatically in compressed format\n",
                     "type": "string"
                   },
                   "ports": {

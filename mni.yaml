@@ -5632,6 +5632,10 @@ paths:
                     version:
                       description: software firmware/image version
                       type: string
+                    config:
+                      description: |
+                        CLI, JSON or XML (NETCONF/YANG) configuration, *note*: is stored automatically in compressed format
+                      type: string
                     ports:
                       type: array
                       minItems: 1
@@ -5858,6 +5862,10 @@ paths:
                     type: string
                   version:
                     description: software firmware/image version
+                    type: string
+                  config:
+                    description: |
+                      CLI, JSON or XML (NETCONF/YANG) configuration, *note*: is stored automatically in compressed format
                     type: string
                   ports:
                     type: array
@@ -6223,6 +6231,10 @@ paths:
                 version:
                   description: software firmware/image version
                   type: string
+                config:
+                  description: |
+                    CLI, JSON or XML (NETCONF/YANG) configuration, *note*: is stored automatically in compressed format
+                  type: string
                 ports:
                   type: array
                   minItems: 1
@@ -6472,6 +6484,10 @@ paths:
                   version:
                     description: software firmware/image version
                     type: string
+                  config:
+                    description: |
+                      CLI, JSON or XML (NETCONF/YANG) configuration, *note*: is stored automatically in compressed format
+                    type: string
                   ports:
                     type: array
                     minItems: 1
@@ -6693,6 +6709,10 @@ paths:
                 version:
                   description: software firmware/image version
                   type: string
+                config:
+                  description: |
+                    CLI, JSON or XML (NETCONF/YANG) configuration, *note*: is stored automatically in compressed format
+                  type: string
                 ports:
                   type: array
                   minItems: 1
@@ -6903,6 +6923,10 @@ paths:
                   type: string
                 version:
                   description: software firmware/image version
+                  type: string
+                config:
+                  description: |
+                    CLI, JSON or XML (NETCONF/YANG) configuration, *note*: is stored automatically in compressed format
                   type: string
                 ports:
                   type: array
