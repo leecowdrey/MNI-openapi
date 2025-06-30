@@ -5522,6 +5522,7 @@
               "schema": {
                 "type": "object",
                 "required": [
+                  "reference",
                   "customer",
                   "commissioned",
                   "link"
@@ -12860,6 +12861,9 @@
                       "point": {
                         "$ref": "#/components/schemas/dateTime"
                       },
+                      "reference": {
+                        "type": "string"
+                      },
                       "purpose": {
                         "$ref": "#/components/schemas/trenchPurpose"
                       },
@@ -13022,6 +13026,7 @@
                   "type": "object",
                   "required": [
                     "point",
+                    "reference",
                     "purpose",
                     "construction",
                     "demographics",
@@ -13038,6 +13043,9 @@
                     },
                     "purpose": {
                       "$ref": "#/components/schemas/trenchPurpose"
+                    },
+                    "reference": {
+                      "type": "string"
                     },
                     "construction": {
                       "type": "object",
@@ -13310,6 +13318,7 @@
                 "type": "object",
                 "required": [
                   "purpose",
+                  "reference",
                   "construction",
                   "demographics",
                   "build",
@@ -13318,6 +13327,9 @@
                 "properties": {
                   "purpose": {
                     "$ref": "#/components/schemas/trenchPurpose"
+                  },
+                  "reference": {
+                    "type": "string"
                   },
                   "construction": {
                     "type": "object",
@@ -13473,6 +13485,7 @@
                 "service/drop": {
                   "value": {
                     "purpose": "service/drop",
+                    "reference": "gbr-worc-cg-south",
                     "construction": {
                       "depth": 0.5,
                       "classifier": "low",
@@ -13700,6 +13713,7 @@
               "schema": {
                 "type": "object",
                 "required": [
+                  "reference",
                   "construction",
                   "demographics",
                   "build",
@@ -13708,6 +13722,9 @@
                 "properties": {
                   "purpose": {
                     "$ref": "#/components/schemas/trenchPurpose"
+                  },
+                  "reference": {
+                    "type": "string"
                   },
                   "construction": {
                     "type": "object",
@@ -13863,6 +13880,7 @@
                 "service/drop": {
                   "value": {
                     "purpose": "service/drop",
+                    "reference": "gbr-worc-cg-south",
                     "construction": {
                       "depth": 0.5,
                       "classifier": "low",
@@ -13967,6 +13985,9 @@
                 "properties": {
                   "purpose": {
                     "$ref": "#/components/schemas/trenchPurpose"
+                  },
+                  "reference": {
+                    "type": "string"
                   },
                   "construction": {
                     "type": "object",
@@ -14164,6 +14185,9 @@
                     "trenchId": {
                       "$ref": "#/components/schemas/trenchId"
                     },
+                    "reference": {
+                      "type": "string"
+                    },
                     "purpose": {
                       "$ref": "#/components/schemas/trenchPurpose"
                     },
@@ -14290,6 +14314,7 @@
                   "service/drop": {
                     "value": {
                       "trenchId": "5ef82c6f-b06b-4d93-a4c2-3b78b62dd7cf",
+                      "reference": "gbr-worc-cg-south",
                       "purpose": "service/drop",
                       "construction": {
                         "depth": 0.5,

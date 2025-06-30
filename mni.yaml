@@ -3476,6 +3476,7 @@ paths:
             schema:
               type: object
               required:
+              - reference
               - customer
               - commissioned
               - link
@@ -8289,6 +8290,8 @@ paths:
                       $ref: "#/components/schemas/trenchId"
                     point:
                       $ref: "#/components/schemas/dateTime"
+                    reference:
+                      type: string
                     purpose:
                       $ref: "#/components/schemas/trenchPurpose"
                     construction:
@@ -8397,6 +8400,7 @@ paths:
                 type: object
                 required:
                 - point
+                - reference
                 - purpose
                 - construction
                 - demographics
@@ -8410,6 +8414,8 @@ paths:
                     $ref: "#/components/schemas/dateTime"
                   purpose:
                     $ref: "#/components/schemas/trenchPurpose"
+                  reference:
+                    type: string
                   construction:
                     type: object
                     required:
@@ -8587,6 +8593,7 @@ paths:
               type: object
               required:
               - purpose
+              - reference
               - construction
               - demographics
               - build
@@ -8594,6 +8601,8 @@ paths:
               properties:
                 purpose:
                   $ref: "#/components/schemas/trenchPurpose"
+                reference:
+                  type: string
                 construction:
                   type: object
                   required:
@@ -8701,6 +8710,7 @@ paths:
               service/drop:
                 value:
                   purpose: service/drop
+                  reference: gbr-worc-cg-south
                   construction:
                     depth: 0.5
                     classifier: low
@@ -8840,6 +8850,7 @@ paths:
             schema:
               type: object
               required:
+              - reference
               - construction
               - demographics
               - build
@@ -8847,6 +8858,8 @@ paths:
               properties:
                 purpose:
                   $ref: "#/components/schemas/trenchPurpose"
+                reference:
+                  type: string
                 construction:
                   type: object
                   required:
@@ -8954,6 +8967,7 @@ paths:
               service/drop:
                 value:
                   purpose: service/drop
+                  reference: gbr-worc-cg-south
                   construction:
                     depth: 0.5
                     classifier: low
@@ -9022,6 +9036,8 @@ paths:
               properties:
                 purpose:
                   $ref: "#/components/schemas/trenchPurpose"
+                reference:
+                  type: string
                 construction:
                   type: object
                   properties:
@@ -9145,6 +9161,8 @@ paths:
                 properties:
                   trenchId:
                     $ref: "#/components/schemas/trenchId"
+                  reference:
+                    type: string
                   purpose:
                     $ref: "#/components/schemas/trenchPurpose"
                   construction:
@@ -9229,6 +9247,7 @@ paths:
                 service/drop:
                   value:
                     trenchId: 5ef82c6f-b06b-4d93-a4c2-3b78b62dd7cf
+                    reference: gbr-worc-cg-south
                     purpose: service/drop
                     construction:
                       depth: 0.5
