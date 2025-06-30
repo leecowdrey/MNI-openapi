@@ -15,7 +15,7 @@ info:
     name: Proprietary License
     url: https://www.merkator.com/
     x-copyright: © 2024-2025 Merkator nv/sa. All rights reserved.
-  version: 1.0.0.1751275930
+  version: 1.0.0.1751318778
 externalDocs:
   description: Application User Manual
   url: /mni/v1/doc/html/user-guide/index.html
@@ -2373,7 +2373,7 @@ paths:
                     isoCode:
                       $ref: "#/components/schemas/currencyIsoCode"
                     rate:
-                      description: foreign currency conversion rate from default currency to this currency
+                      description: currency conversion rate from default currency to this currency
                       type: number
                       format: currency
               examples:
@@ -9594,6 +9594,95 @@ paths:
           $ref: "#/components/responses/UnauthorizedError"
         "404":
           $ref: "#/components/responses/NotFound"
+  /q2c/trenchDistance:
+    post:
+      summary: simple trench distance estimate
+      security:
+      - openId:
+        - read:mni_q2c
+      operationId: q2cTrenchDistanceEstimate
+      tags:
+      - Q2C
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - purpose
+              - coordinates
+              properties:
+                purpose:
+                  $ref: "#/components/schemas/trenchPurpose"
+                trenchId:
+                  $ref: "#/components/schemas/trenchId"
+                isoCode:
+                  $ref: "#/components/schemas/currencyIsoCode"
+                  default: "EUR"
+                coordinates:
+                  type: array
+                  minItems: 2
+                  items:
+                    $ref: "#/components/schemas/coordinate"
+            examples:
+              service/drop:
+                value:
+                  purpose: service/drop
+                  trenchId: b55fcbef-6d4f-4803-8755-0d920835de85
+                  isoCode: EUR
+                  coordinates:
+                  - x: 52.314930723981576
+                    y: -2.1765905793762297
+                  - x: 52.31530785113297
+                    y: -2.175979035720834
+                  - x: 52.315461980435
+                    y: -2.175683992729196
+                  - x: 52.31558987455477
+                    y: -2.1755713399505705
+                  - x: 52.3157144889826
+                    y: -2.1754694160080046
+                  - x: 52.315793192650986
+                    y: -2.1754533227539152
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  distance:
+                    type: number
+                    minimum: 0
+                  unit:
+                    $ref: "#/components/schemas/sizeUnit"
+                    default: "m"
+                  cost:
+                    type: number
+                    format: currency
+                  symbol:
+                    $ref: "#/components/schemas/currencySymbol"
+                  isoCode:
+                    $ref: "#/components/schemas/currencyIsoCode"
+                  rate:
+                    description: currency conversion rate from default currency to this currency (if applicable)
+                    type: number
+                    format: currency
+              examples:
+                service/drop:
+                  value:
+                    distance: 3.75
+                    unit: m
+                    symbol: "€"
+                    isoCode: "EUR"
+                    rate: 1
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /admin/data:
     get:
       summary: Export data settings
@@ -12211,7 +12300,6 @@ components:
       required:
       - x
       - y
-      - z
       properties:
         x:
           description: measured along east-west axis
@@ -14757,6 +14845,8 @@ security:
   - write:mni_pole
   - read:mni_predict
   - write:mni_predict
+  - read:mni_q2c
+  - write:mni_q2c
   - read:mni_rack
   - write:mni_rack
   - read:mni_service
