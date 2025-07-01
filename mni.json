@@ -17,7 +17,7 @@
       "url": "https://www.merkator.com/",
       "x-copyright": "© 2024-2025 Merkator nv/sa. All rights reserved."
     },
-    "version": "1.0.0.1751369454"
+    "version": "1.0.0.1751400821"
   },
   "externalDocs": {
     "description": "Application User Manual",
@@ -20499,6 +20499,20 @@
           "link",
           "backhaul",
           "unclassified"
+        ]
+      },
+      "serviceType": {
+        "description": "intended offering of the suppplied service, *note*: \n  - `broadband` includes residential offerings such as xDSL and DOCSIS\n  - `sogea` is Single Order Generic Ethernet Access which is replacing traditional broadband offerings\n  - `fttx` includes FTTC, FTTH, FTTP andd other variants\n  - `ethernet` is wholesale or enterprise point-to-point ethernet connectivity\n  - `optical` is layer 1 connectivity\n  - `voice` is the traditional required extra voice telephony service offered with `broadband`\n",
+        "type": "string",
+        "enum": [
+          "broadband",
+          "circuit",
+          "ethernet",
+          "fttx",
+          "optical",
+          "sogea",
+          "unclassified",
+          "voice"
         ]
       },
       "trenchPurpose": {

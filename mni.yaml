@@ -15,7 +15,7 @@ info:
     name: Proprietary License
     url: https://www.merkator.com/
     x-copyright: © 2024-2025 Merkator nv/sa. All rights reserved.
-  version: 1.0.0.1751369454
+  version: 1.0.0.1751400821
 externalDocs:
   description: Application User Manual
   url: /mni/v1/doc/html/user-guide/index.html
@@ -14001,6 +14001,25 @@ components:
       - link
       - backhaul
       - unclassified
+    serviceType:
+      description: |
+        intended offering of the suppplied service, *note*: 
+          - `broadband` includes residential offerings such as xDSL and DOCSIS
+          - `sogea` is Single Order Generic Ethernet Access which is replacing traditional broadband offerings
+          - `fttx` includes FTTC, FTTH, FTTP andd other variants
+          - `ethernet` is wholesale or enterprise point-to-point ethernet connectivity
+          - `optical` is layer 1 connectivity
+          - `voice` is the traditional required extra voice telephony service offered with `broadband`
+      type: string
+      enum:
+      - broadband
+      - circuit
+      - ethernet
+      - fttx
+      - optical
+      - sogea
+      - unclassified
+      - voice
     trenchPurpose:
       description: |
         intended purpose of the contents of the trench
