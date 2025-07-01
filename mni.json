@@ -17,7 +17,7 @@
       "url": "https://www.merkator.com/",
       "x-copyright": "© 2024-2025 Merkator nv/sa. All rights reserved."
     },
-    "version": "1.0.0.1751318778"
+    "version": "1.0.0.1751369454"
   },
   "externalDocs": {
     "description": "Application User Manual",
@@ -20505,9 +20505,11 @@
         "description": "intended purpose of the contents of the trench\n",
         "type": "string",
         "enum": [
-          "service/drop",
-          "ring",
           "backhaul",
+          "pole",
+          "ring",
+          "service/drop",
+          "tower",
           "unclassified"
         ]
       },
