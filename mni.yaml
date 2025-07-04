@@ -15,7 +15,7 @@ info:
     name: Proprietary License
     url: https://www.merkator.com/
     x-copyright: © 2024-2025 Merkator nv/sa. All rights reserved.
-  version: 1.0.0.1751462836
+  version: 1.0.0.1751640936
 externalDocs:
   description: Application User Manual
   url: /mni/v1/doc/html/user-guide/index.html
@@ -666,6 +666,195 @@ paths:
           $ref: "#/components/responses/UnauthorizedError"
         "404":
           $ref: "#/components/responses/NotFound"
+  /cost/trench:
+    get:
+      summary: List known trench costs
+      security:
+      - openId:
+        - read:mni_cost
+      operationId: getAllTrenchCosts
+      tags:
+      - Costs - Trench
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                minItems: 0
+                items:
+                  type: object
+                  required:
+                  - purpose
+                  - unit
+                  - costPerUnit
+                  properties:
+                    purpose:
+                      $ref: "#/components/schemas/trenchPurpose"
+                    type:
+                      description: is only included when purpose is `unclassified`
+                      $ref: "#/components/schemas/constructionType"
+                    unit:
+                      $ref: "#/components/schemas/sizeUnit"
+                    costPerUnit:
+                      type: number
+                      format: currency
+                      minimum: 0
+              examples:
+                sample:
+                  value:
+                  - purpose: service/drop
+                    unit: m
+                    costPerUnit: 5
+                  - purpose: pole
+                    unit: m
+                    costPerUnit: 6.5
+                  - purpose: unclassified
+                    type: large
+                    unit: m
+                    costPerUnit: 30
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    post:
+      summary: Add single trench cost
+      security:
+      - openId:
+        - write:mni_cost
+      operationId: addTrenchCost
+      tags:
+      - Alerts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - purpose
+              - unit
+              - costPerUnit
+              properties:
+                purpose:
+                  $ref: "#/components/schemas/trenchPurpose"
+                type:
+                  description: only include when purpose is `unclassified`
+                  $ref: "#/components/schemas/constructionType"
+                unit:
+                  $ref: "#/components/schemas/sizeUnit"
+                costPerUnit:
+                  type: number
+                  format: currency
+                  minimum: 0
+            examples:
+              sample:
+                value:
+                  purpose: service/drop
+                  unit: m
+                  costPerUnit: 5
+      responses:
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "409":
+          $ref: "#/components/responses/Conflict"
+    put:
+      summary: Replace single existing trench cost
+      security:
+      - openId:
+        - write:mni_cost
+      operationId: replaceTrenchCost
+      tags:
+      - Alerts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - purpose
+              - unit
+              - costPerUnit
+              properties:
+                purpose:
+                  $ref: "#/components/schemas/trenchPurpose"
+                type:
+                  description: only include when purpose is `unclassified`
+                  $ref: "#/components/schemas/constructionType"
+                unit:
+                  $ref: "#/components/schemas/sizeUnit"
+                costPerUnit:
+                  type: number
+                  format: currency
+                  minimum: 0
+            examples:
+              sample:
+                value:
+                  purpose: service/drop
+                  unit: m
+                  costPerUnit: 5.50
+      responses:
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "409":
+          $ref: "#/components/responses/Conflict"
+    delete:
+      summary: Remove single trench cost
+      security:
+      - openId:
+        - write:mni_cost
+      operationId: deleteTrenchCost
+      tags:
+      - Alerts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - purpose
+              - unit
+              - costPerUnit
+              properties:
+                purpose:
+                  $ref: "#/components/schemas/trenchPurpose"
+                type:
+                  description: only include when purpose is `unclassified`
+                  $ref: "#/components/schemas/constructionType"
+                unit:
+                  $ref: "#/components/schemas/sizeUnit"
+                costPerUnit:
+                  type: number
+                  format: currency
+                  minimum: 0
+            examples:
+              sample:
+                value:
+                  purpose: service/drop
+                  unit: m
+                  costPerUnit: 5
+      responses:
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /cve/ne/{neId}:
     get:
       summary: List known and impacting CVEs for specified NE
@@ -899,9 +1088,9 @@ paths:
                   platforms:
                   - MNI
                   versions:
-                  - lessThan: "1.0"
+                  - lessThan: 1.0
                     status: affected
-                    version: "0"
+                    version: 0
                     versionType: semver
       responses:
         "200":
@@ -923,6 +1112,8 @@ paths:
           $ref: "#/components/responses/UnauthorizedError"
         "404":
           $ref: "#/components/responses/NotFound"
+        "409":
+          $ref: "#/components/responses/Conflict"
   /alert/callback:
     post:
       summary: Subscribe to one or more alerts
@@ -9678,6 +9869,8 @@ paths:
               properties:
                 purpose:
                   $ref: "#/components/schemas/trenchPurpose"
+                type:
+                  $ref: "#/components/schemas/constructionType"
                 trenchId:
                   $ref: "#/components/schemas/trenchId"
                 isoCode:
@@ -9735,6 +9928,7 @@ paths:
               examples:
                 service/drop:
                   value:
+                    cost: 3.75
                     distance: 3.75
                     unit: m
                     symbol: "€"
@@ -12398,7 +12592,6 @@ components:
       enum:
       - micro
       - narrow
-      - "hand-dug"
       - backhoe
       - inline
       - portable
@@ -14285,12 +14478,22 @@ components:
       type: string
       format: uuid
     sizeUnit:
-      description: unit of measure of the dimension - `cm` - metric centimetres - `mm` - metric millimetres - `m` - metric metres - `inch` - imperial inches - `feet` - imperial feet
+      description: |
+        unit of measure of the dimension:
+        - `cm` metric centimetres
+        - `mm` metric millimetres
+        - `m` metric metres
+        - `km` meric kilometres
+        - `Mm` metric megametres
+        - `inch` imperial inches
+        - `feet` imperial feet
       type: string
       enum:
       - cm
       - mm
       - m
+      - km
+      - Mm
       - inch
       - feet
     poleId:
@@ -14637,8 +14840,9 @@ components:
         format: uuid
     currencyId:
       name: currencyId
-      in: path
       description: internal currency identifier
+      in: path
+      required: true
       schema:
         type: string
         format: uuid
@@ -14903,6 +15107,13 @@ components:
           schema:
             description: specified identifier value was not found
             type: object
+    Conflict:
+      description: Conflict
+      content:
+        application/json:
+          schema:
+            description: could not be processed because of conflict in the current state of the resource
+            type: object
     UnsupportedMediaType:
       description: Unsupported Media Type
       content:
@@ -14921,6 +15132,8 @@ security:
   - write:mni_api
   - read:mni_cable
   - write:mni_cable
+  - read:mni_cost
+  - write:mni_cost
   - read:mni_duct
   - write:mni_duct
   - read:mni_ne
