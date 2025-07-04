@@ -17,7 +17,7 @@
       "url": "https://www.merkator.com/",
       "x-copyright": "© 2024-2025 Merkator nv/sa. All rights reserved."
     },
-    "version": "1.0.0.1751640936"
+    "version": "1.0.0.1751641039"
   },
   "externalDocs": {
     "description": "Application User Manual",
@@ -1146,7 +1146,7 @@
         ],
         "operationId": "addTrenchCost",
         "tags": [
-          "Alerts"
+          "Costs - Trench"
         ],
         "requestBody": {
           "required": true,
@@ -1215,7 +1215,7 @@
         ],
         "operationId": "replaceTrenchCost",
         "tags": [
-          "Alerts"
+          "Costs - Trench"
         ],
         "requestBody": {
           "required": true,
@@ -1284,7 +1284,7 @@
         ],
         "operationId": "deleteTrenchCost",
         "tags": [
-          "Alerts"
+          "Costs - Trench"
         ],
         "requestBody": {
           "required": true,
