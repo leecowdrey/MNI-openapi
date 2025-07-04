@@ -15,7 +15,7 @@ info:
     name: Proprietary License
     url: https://www.merkator.com/
     x-copyright: © 2024-2025 Merkator nv/sa. All rights reserved.
-  version: 1.0.0.1751641039
+  version: 1.0.0.1751641199
 externalDocs:
   description: Application User Manual
   url: /mni/v1/doc/html/user-guide/index.html
@@ -826,26 +826,16 @@ paths:
               type: object
               required:
               - purpose
-              - unit
-              - costPerUnit
               properties:
                 purpose:
                   $ref: "#/components/schemas/trenchPurpose"
                 type:
                   description: only include when purpose is `unclassified`
                   $ref: "#/components/schemas/constructionType"
-                unit:
-                  $ref: "#/components/schemas/sizeUnit"
-                costPerUnit:
-                  type: number
-                  format: currency
-                  minimum: 0
             examples:
               sample:
                 value:
                   purpose: service/drop
-                  unit: m
-                  costPerUnit: 5
       responses:
         "204":
           $ref: "#/components/responses/NoContent"
