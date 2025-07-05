@@ -17,7 +17,7 @@
       "url": "https://www.merkator.com/",
       "x-copyright": "© 2024-2025 Merkator nv/sa. All rights reserved."
     },
-    "version": "1.0.0.1751732412"
+    "version": "1.0.0.1751733085"
   },
   "externalDocs": {
     "description": "Application User Manual",
@@ -11205,7 +11205,7 @@
                       },
                       {
                         "slot": 6,
-                        "usage": "predicted"
+                        "usage": "free"
                       }
                     ]
                   }
