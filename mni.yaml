@@ -15,7 +15,7 @@ info:
     name: Proprietary License
     url: https://www.merkator.com/
     x-copyright: © 2024-2025 Merkator nv/sa. All rights reserved.
-  version: 1.0.0.1756150415
+  version: 1.0.0.1756330939
 externalDocs:
   description: Application User Manual
   url: /mni/v1/doc/html/user-guide/index.html
@@ -15105,6 +15105,60 @@ paths:
           $ref: "#/components/responses/UnauthorizedError"
         "404":
           $ref: "#/components/responses/NotFound"
+  /world/fromCoordinate:
+    post:
+      summary: Find country by coordinate
+      description: |
+        Find the matching ISO 3166-1 alpha-3 three-letter country code that contains the supplied coordinate 
+      security:
+        - openId:
+            - read:mni_ui
+            - read:mni_alert
+            - read:mni_fetch
+            - read:mni_predict
+            - read:mni_admin
+            - read:mni_cable
+            - read:mni_duct
+            - read:mni_ne
+            - read:mni_pole
+            - read:mni_rack
+            - read:mni_service
+            - read:mni_site
+            - read:mni_trench
+      operationId: getWorldCountryFromCoordinate
+      tags:
+        - World
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/coordinate"
+            examples: 
+              sample:
+                value:
+                  x: -4.432051999699990
+                  y: 57.4943539998374
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  country:
+                    $ref: "#/components/schemas/countryCode"
+              examples:
+                sample:
+                  value:
+                    country: GBR
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFound"
 components:
   schemas:
     ianaMimeType:
@@ -17933,7 +17987,6 @@ components:
         - `AFG` Afghanistan
         - `AGO` Angola
         - `AIA` Anguilla
-        - `ALA` Åland Islands
         - `ALB` Albania
         - `AND` Andorra
         - `ARE` United Arab Emirates
@@ -17941,7 +17994,6 @@ components:
         - `ARM` Armenia
         - `ASM` American Samoa
         - `ATA` Antarctica
-        - `ATF` French Southern Territories
         - `ATG` Antigua and Barbuda
         - `AUS` Australia
         - `AUT` Austria
@@ -17965,7 +18017,6 @@ components:
         - `BRB` Barbados
         - `BRN` Brunei Darussalam
         - `BTN` Bhutan
-        - `BVT` Bouvet Island
         - `BWA` Botswana
         - `CAF` Central African Republic
         - `CAN` Canada
@@ -18025,8 +18076,6 @@ components:
         - `GUF` French Guiana
         - `GUM` Guam
         - `GUY` Guyana
-        - `HKG` Hong Kong
-        - `HMD` Heard Island and McDonald Islands
         - `HND` Honduras
         - `HRV` Croatia
         - `HTI` Haiti
@@ -18034,7 +18083,6 @@ components:
         - `IDN` Indonesia
         - `IMN` Isle of Man
         - `IND` India
-        - `IOT` British Indian Ocean Territory
         - `IRL` Ireland
         - `IRN` Iran, Islamic Republic of
         - `IRQ` Iraq
@@ -18042,7 +18090,6 @@ components:
         - `ISR` Israel
         - `ITA` Italy
         - `JAM` Jamaica
-        - `JEY` Jersey
         - `JOR` Jordan
         - `JPN` Japan
         - `KAZ` Kazakhstan
@@ -18064,8 +18111,6 @@ components:
         - `LTU` Lithuania
         - `LUX` Luxembourg
         - `LVA` Latvia
-        - `MAC` Macao
-        - `MAF` Saint Martin (French part)
         - `MAR` Morocco
         - `MCO` Monaco
         - `MDA` Moldova, Republic of
@@ -18091,7 +18136,6 @@ components:
         - `NAM` Namibia
         - `NCL` New Caledonia
         - `NER` Niger
-        - `NFK` Norfolk Island
         - `NGA` Nigeria
         - `NIC` Nicaragua
         - `NIU` Niue
@@ -18109,7 +18153,6 @@ components:
         - `PLW` Palau
         - `PNG` Papua New Guinea
         - `POL` Poland
-        - `PRI` Puerto Rico
         - `PRK` Korea, Democratic People's Republic of
         - `PRT` Portugal
         - `PRY` Paraguay
@@ -18124,9 +18167,7 @@ components:
         - `SDN` Sudan
         - `SEN` Senegal
         - `SGP` Singapore
-        - `SGS` South Georgia and the South Sandwich Islands
         - `SHN` Saint Helena, Ascension and Tristan da Cunha
-        - `SJM` Svalbard and Jan Mayen
         - `SLB` Solomon Islands
         - `SLE` Sierra Leone
         - `SLV` El Salvador
@@ -18141,7 +18182,6 @@ components:
         - `SVN` Slovenia
         - `SWE` Sweden
         - `SWZ` Eswatini
-        - `SXM` Sint Maarten (Dutch part)
         - `SYC` Seychelles
         - `SYR` Syrian Arab Republic
         - `TCA` Turks and Caicos Islands
@@ -18161,7 +18201,6 @@ components:
         - `TZA` Tanzania, United Republic of
         - `UGA` Uganda
         - `UKR` Ukraine
-        - `UMI` United States Minor Outlying Islands
         - `URY` Uruguay
         - `USA` United States of America
         - `UZB` Uzbekistan
@@ -18183,7 +18222,6 @@ components:
         - AFG
         - AGO
         - AIA
-        - ALA
         - ALB
         - AND
         - ARE
@@ -18191,7 +18229,6 @@ components:
         - ARM
         - ASM
         - ATA
-        - ATF
         - ATG
         - AUS
         - AUT
@@ -18215,11 +18252,9 @@ components:
         - BRB
         - BRN
         - BTN
-        - BVT
         - BWA
         - CAF
         - CAN
-        - CCK
         - CHE
         - CHL
         - CHN
@@ -18247,7 +18282,6 @@ components:
         - ECU
         - EGY
         - ERI
-        - ESH
         - ESP
         - EST
         - ETH
@@ -18275,8 +18309,6 @@ components:
         - GUF
         - GUM
         - GUY
-        - HKG
-        - HMD
         - HND
         - HRV
         - HTI
@@ -18284,7 +18316,6 @@ components:
         - IDN
         - IMN
         - IND
-        - IOT
         - IRL
         - IRN
         - IRQ
@@ -18292,7 +18323,6 @@ components:
         - ISR
         - ITA
         - JAM
-        - JEY
         - JOR
         - JPN
         - KAZ
@@ -18315,7 +18345,6 @@ components:
         - LUX
         - LVA
         - MAC
-        - MAF
         - MAR
         - MCO
         - MDA
@@ -18341,7 +18370,6 @@ components:
         - NAM
         - NCL
         - NER
-        - NFK
         - NGA
         - NIC
         - NIU
@@ -18359,7 +18387,6 @@ components:
         - PLW
         - PNG
         - POL
-        - PRI
         - PRK
         - PRT
         - PRY
@@ -18374,15 +18401,12 @@ components:
         - SDN
         - SEN
         - SGP
-        - SGS
         - SHN
-        - SJM
         - SLB
         - SLE
         - SLV
         - SMR
         - SOM
-        - SPM
         - SRB
         - SSD
         - STP
@@ -18391,7 +18415,6 @@ components:
         - SVN
         - SWE
         - SWZ
-        - SXM
         - SYC
         - SYR
         - TCA
@@ -18411,7 +18434,6 @@ components:
         - TZA
         - UGA
         - UKR
-        - UMI
         - URY
         - USA
         - UZB
@@ -19926,7 +19948,6 @@ components:
         - `AFG` Afghanistan
         - `AGO` Angola
         - `AIA` Anguilla
-        - `ALA` Åland Islands
         - `ALB` Albania
         - `AND` Andorra
         - `ARE` United Arab Emirates
@@ -19934,7 +19955,6 @@ components:
         - `ARM` Armenia
         - `ASM` American Samoa
         - `ATA` Antarctica
-        - `ATF` French Southern Territories
         - `ATG` Antigua and Barbuda
         - `AUS` Australia
         - `AUT` Austria
@@ -19958,11 +19978,9 @@ components:
         - `BRB` Barbados
         - `BRN` Brunei Darussalam
         - `BTN` Bhutan
-        - `BVT` Bouvet Island
         - `BWA` Botswana
         - `CAF` Central African Republic
         - `CAN` Canada
-        - `CCK` Cocos (Keeling) Islands
         - `CHE` Switzerland
         - `CHL` Chile
         - `CHN` China
@@ -19977,7 +19995,6 @@ components:
         - `CRI` Costa Rica
         - `CUB` Cuba
         - `CUW` Curaçao
-        - `CXR` Christmas Island
         - `CYM` Cayman Islands
         - `CYP` Cyprus
         - `CZE` Czechia
@@ -19990,7 +20007,6 @@ components:
         - `ECU` Ecuador
         - `EGY` Egypt
         - `ERI` Eritrea
-        - `ESH` Western Sahara
         - `ESP` Spain
         - `EST` Estonia
         - `ETH` Ethiopia
@@ -20018,8 +20034,6 @@ components:
         - `GUF` French Guiana
         - `GUM` Guam
         - `GUY` Guyana
-        - `HKG` Hong Kong
-        - `HMD` Heard Island and McDonald Islands
         - `HND` Honduras
         - `HRV` Croatia
         - `HTI` Haiti
@@ -20027,7 +20041,6 @@ components:
         - `IDN` Indonesia
         - `IMN` Isle of Man
         - `IND` India
-        - `IOT` British Indian Ocean Territory
         - `IRL` Ireland
         - `IRN` Iran, Islamic Republic of
         - `IRQ` Iraq
@@ -20035,7 +20048,6 @@ components:
         - `ISR` Israel
         - `ITA` Italy
         - `JAM` Jamaica
-        - `JEY` Jersey
         - `JOR` Jordan
         - `JPN` Japan
         - `KAZ` Kazakhstan
@@ -20057,7 +20069,6 @@ components:
         - `LTU` Lithuania
         - `LUX` Luxembourg
         - `LVA` Latvia
-        - `MAC` Macao
         - `MAF` Saint Martin (French part)
         - `MAR` Morocco
         - `MCO` Monaco
@@ -20084,7 +20095,6 @@ components:
         - `NAM` Namibia
         - `NCL` New Caledonia
         - `NER` Niger
-        - `NFK` Norfolk Island
         - `NGA` Nigeria
         - `NIC` Nicaragua
         - `NIU` Niue
@@ -20102,7 +20112,6 @@ components:
         - `PLW` Palau
         - `PNG` Papua New Guinea
         - `POL` Poland
-        - `PRI` Puerto Rico
         - `PRK` Korea, Democratic People's Republic of
         - `PRT` Portugal
         - `PRY` Paraguay
@@ -20117,15 +20126,12 @@ components:
         - `SDN` Sudan
         - `SEN` Senegal
         - `SGP` Singapore
-        - `SGS` South Georgia and the South Sandwich Islands
         - `SHN` Saint Helena, Ascension and Tristan da Cunha
-        - `SJM` Svalbard and Jan Mayen
         - `SLB` Solomon Islands
         - `SLE` Sierra Leone
         - `SLV` El Salvador
         - `SMR` San Marino
         - `SOM` Somalia
-        - `SPM` Saint Pierre and Miquelon
         - `SRB` Serbia
         - `SSD` South Sudan
         - `STP` Sao Tome and Principe
@@ -20134,7 +20140,6 @@ components:
         - `SVN` Slovenia
         - `SWE` Sweden
         - `SWZ` Eswatini
-        - `SXM` Sint Maarten (Dutch part)
         - `SYC` Seychelles
         - `SYR` Syrian Arab Republic
         - `TCA` Turks and Caicos Islands
@@ -20154,7 +20159,6 @@ components:
         - `TZA` Tanzania, United Republic of
         - `UGA` Uganda
         - `UKR` Ukraine
-        - `UMI` United States Minor Outlying Islands
         - `URY` Uruguay
         - `USA` United States of America
         - `UZB` Uzbekistan
@@ -20180,7 +20184,6 @@ components:
           - AFG
           - AGO
           - AIA
-          - ALA
           - ALB
           - AND
           - ARE
@@ -20188,7 +20191,6 @@ components:
           - ARM
           - ASM
           - ATA
-          - ATF
           - ATG
           - AUS
           - AUT
@@ -20212,11 +20214,9 @@ components:
           - BRB
           - BRN
           - BTN
-          - BVT
           - BWA
           - CAF
           - CAN
-          - CCK
           - CHE
           - CHL
           - CHN
@@ -20231,7 +20231,6 @@ components:
           - CRI
           - CUB
           - CUW
-          - CXR
           - CYM
           - CYP
           - CZE
@@ -20244,7 +20243,6 @@ components:
           - ECU
           - EGY
           - ERI
-          - ESH
           - ESP
           - EST
           - ETH
@@ -20272,8 +20270,6 @@ components:
           - GUF
           - GUM
           - GUY
-          - HKG
-          - HMD
           - HND
           - HRV
           - HTI
@@ -20281,7 +20277,6 @@ components:
           - IDN
           - IMN
           - IND
-          - IOT
           - IRL
           - IRN
           - IRQ
@@ -20289,7 +20284,6 @@ components:
           - ISR
           - ITA
           - JAM
-          - JEY
           - JOR
           - JPN
           - KAZ
@@ -20311,8 +20305,6 @@ components:
           - LTU
           - LUX
           - LVA
-          - MAC
-          - MAF
           - MAR
           - MCO
           - MDA
@@ -20338,7 +20330,6 @@ components:
           - NAM
           - NCL
           - NER
-          - NFK
           - NGA
           - NIC
           - NIU
@@ -20356,7 +20347,6 @@ components:
           - PLW
           - PNG
           - POL
-          - PRI
           - PRK
           - PRT
           - PRY
@@ -20371,15 +20361,12 @@ components:
           - SDN
           - SEN
           - SGP
-          - SGS
           - SHN
-          - SJM
           - SLB
           - SLE
           - SLV
           - SMR
           - SOM
-          - SPM
           - SRB
           - SSD
           - STP
@@ -20388,7 +20375,6 @@ components:
           - SVN
           - SWE
           - SWZ
-          - SXM
           - SYC
           - SYR
           - TCA
@@ -20408,7 +20394,6 @@ components:
           - TZA
           - UGA
           - UKR
-          - UMI
           - URY
           - USA
           - UZB
