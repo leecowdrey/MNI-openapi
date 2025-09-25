@@ -15,7 +15,7 @@ info:
     name: Proprietary License
     url: https://www.merkator.com/
     x-copyright: © 2024-2025 Merkator nv/sa. All rights reserved.
-  version: 1.0.0.1757594058
+  version: 1.0.0.1758833397
 externalDocs:
   description: Application User Manual
   url: /mni/v1/doc/html/user-guide/index.html
@@ -3260,6 +3260,8 @@ paths:
                   properties:
                     country:
                       $ref: "#/components/schemas/countryCode"
+                    reference:
+                      type: string
                     poleId:
                       $ref: "#/components/schemas/poleId"
                     technology:
@@ -3287,6 +3289,8 @@ paths:
                       $ref: "#/components/schemas/ductId"
                     country:
                       $ref: "#/components/schemas/countryCode"
+                    reference:
+                      type: string
                     technology:
                       $ref: "#/components/schemas/cableTechnology"
                     configuration:
@@ -3483,6 +3487,8 @@ paths:
                       $ref: "#/components/schemas/ductId"
                     country:
                       $ref: "#/components/schemas/countryCode"
+                    reference:
+                      type: string
                     technology:
                       $ref: "#/components/schemas/cableTechnology"
                     configuration:
@@ -3579,6 +3585,8 @@ paths:
                       $ref: "#/components/schemas/cableId"
                     country:
                       $ref: "#/components/schemas/countryCode"
+                    reference:
+                      type: string
                     ductId:
                       $ref: "#/components/schemas/ductId"
                     technology:
@@ -7531,6 +7539,8 @@ paths:
                       $ref: "#/components/schemas/dateTime"
                     country:
                       $ref: "#/components/schemas/countryCode"
+                    reference:
+                      type: string
                     host:
                       type: string
                       format: hostname
@@ -7770,6 +7780,8 @@ paths:
                     $ref: "#/components/schemas/dateTime"
                   country:
                     $ref: "#/components/schemas/countryCode"
+                  reference:
+                    type: string
                   host:
                     type: string
                     format: hostname
@@ -8149,6 +8161,8 @@ paths:
               properties:
                 country:
                   $ref: "#/components/schemas/countryCode"
+                reference:
+                  type: string
                 host:
                   type: string
                   format: hostname
@@ -8447,6 +8461,8 @@ paths:
                     $ref: "#/components/schemas/neId"
                   country:
                     $ref: "#/components/schemas/countryCode"
+                  reference:
+                    type: string
                   host:
                     type: string
                     format: hostname
@@ -8705,6 +8721,8 @@ paths:
                   format: hostname
                 country:
                   $ref: "#/components/schemas/countryCode"
+                reference:
+                  type: string
                 commissioned:
                   $ref: "#/components/schemas/date"
                 decommissioned:
@@ -8944,6 +8962,8 @@ paths:
                   format: hostname
                 country:
                   $ref: "#/components/schemas/countryCode"
+                reference:
+                  type: string
                 commissioned:
                   $ref: "#/components/schemas/date"
                 decommissioned:

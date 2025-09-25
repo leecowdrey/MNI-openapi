@@ -17,7 +17,7 @@
       "url": "https://www.merkator.com/",
       "x-copyright": "© 2024-2025 Merkator nv/sa. All rights reserved."
     },
-    "version": "1.0.0.1757594058"
+    "version": "1.0.0.1758833397"
   },
   "externalDocs": {
     "description": "Application User Manual",
@@ -5077,6 +5077,9 @@
                       "country": {
                         "$ref": "#/components/schemas/countryCode"
                       },
+                      "reference": {
+                        "type": "string"
+                      },
                       "poleId": {
                         "$ref": "#/components/schemas/poleId"
                       },
@@ -5117,6 +5120,9 @@
                       },
                       "country": {
                         "$ref": "#/components/schemas/countryCode"
+                      },
+                      "reference": {
+                        "type": "string"
                       },
                       "technology": {
                         "$ref": "#/components/schemas/cableTechnology"
@@ -5437,6 +5443,9 @@
                       "country": {
                         "$ref": "#/components/schemas/countryCode"
                       },
+                      "reference": {
+                        "type": "string"
+                      },
                       "technology": {
                         "$ref": "#/components/schemas/cableTechnology"
                       },
@@ -5583,6 +5592,9 @@
                       },
                       "country": {
                         "$ref": "#/components/schemas/countryCode"
+                      },
+                      "reference": {
+                        "type": "string"
                       },
                       "ductId": {
                         "$ref": "#/components/schemas/ductId"
@@ -11755,6 +11767,9 @@
                       "country": {
                         "$ref": "#/components/schemas/countryCode"
                       },
+                      "reference": {
+                        "type": "string"
+                      },
                       "host": {
                         "type": "string",
                         "format": "hostname"
@@ -12086,6 +12101,9 @@
                     },
                     "country": {
                       "$ref": "#/components/schemas/countryCode"
+                    },
+                    "reference": {
+                      "type": "string"
                     },
                     "host": {
                       "type": "string",
@@ -12647,6 +12665,9 @@
                   "country": {
                     "$ref": "#/components/schemas/countryCode"
                   },
+                  "reference": {
+                    "type": "string"
+                  },
                   "host": {
                     "type": "string",
                     "format": "hostname"
@@ -13071,6 +13092,9 @@
                     "country": {
                       "$ref": "#/components/schemas/countryCode"
                     },
+                    "reference": {
+                      "type": "string"
+                    },
                     "host": {
                       "type": "string",
                       "format": "hostname"
@@ -13426,6 +13450,9 @@
                   "country": {
                     "$ref": "#/components/schemas/countryCode"
                   },
+                  "reference": {
+                    "type": "string"
+                  },
                   "commissioned": {
                     "$ref": "#/components/schemas/date"
                   },
@@ -13759,6 +13786,9 @@
                   },
                   "country": {
                     "$ref": "#/components/schemas/countryCode"
+                  },
+                  "reference": {
+                    "type": "string"
                   },
                   "commissioned": {
                     "$ref": "#/components/schemas/date"
