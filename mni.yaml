@@ -15,7 +15,7 @@ info:
     name: Proprietary License
     url: https://www.merkator.com/
     x-copyright: © 2024-2025 Merkator nv/sa. All rights reserved.
-  version: 1.0.0.1759849619
+  version: 1.0.0.1760112258
 externalDocs:
   description: Application User Manual
   url: /mni/v1/doc/html/user-guide/index.html
@@ -3058,6 +3058,9 @@ paths:
                           $ref: "#/components/schemas/cableId"
                         country:
                           $ref: "#/components/schemas/countryCode"
+                        cost:
+                          type: number
+                          format: currency
                         poleId:
                           $ref: "#/components/schemas/poleId"
                         point:
@@ -3078,6 +3081,11 @@ paths:
                       properties:
                         cableId:
                           $ref: "#/components/schemas/cableId"
+                        country:
+                          $ref: "#/components/schemas/countryCode"
+                        cost:
+                          type: number
+                          format: currency
                         ductId:
                           $ref: "#/components/schemas/ductId"
                         point:
@@ -3133,6 +3141,9 @@ paths:
                         $ref: "#/components/schemas/cableId"
                       country:
                         $ref: "#/components/schemas/countryCode"
+                      cost:
+                        type: number
+                        format: currency
                       poleId:
                         $ref: "#/components/schemas/poleId"
                       point:
@@ -3160,6 +3171,11 @@ paths:
                       cableId:
                         description: optionally specify the internal cable identifier
                         $ref: "#/components/schemas/cableId"
+                      country:
+                        $ref: "#/components/schemas/countryCode"
+                      cost:
+                        type: number
+                        format: currency
                       ductId:
                         $ref: "#/components/schemas/ductId"
                       point:
@@ -3260,6 +3276,9 @@ paths:
                   properties:
                     country:
                       $ref: "#/components/schemas/countryCode"
+                    cost:
+                      type: number
+                      format: currency
                     reference:
                       type: string
                     poleId:
@@ -3289,6 +3308,9 @@ paths:
                       $ref: "#/components/schemas/ductId"
                     country:
                       $ref: "#/components/schemas/countryCode"
+                    cost:
+                      type: number
+                      format: currency
                     reference:
                       type: string
                     technology:
@@ -3310,6 +3332,7 @@ paths:
                 value:
                   ductId: 4f61c862-cbd6-4455-9cf2-3d478406c693
                   country: BEL
+                  cost: 2.50
                   technology: ethernet
                   configuration:
                     category: Cat6A
@@ -3323,6 +3346,7 @@ paths:
                 value:
                   poleId: 4f61c862-cbd6-4455-9cf2-3d478406c693
                   country: BEL
+                  cost: 7.50
                   technology: singleFiber
                   configuration:
                     strands: 1
@@ -3334,6 +3358,7 @@ paths:
               multi:
                 value:
                   poleId: 4f61c862-cbd6-4455-9cf2-3d478406c693
+                  cost: 15.25
                   technology: multiFiber
                   configuration:
                     ribbons: 12
@@ -3487,6 +3512,9 @@ paths:
                       $ref: "#/components/schemas/ductId"
                     country:
                       $ref: "#/components/schemas/countryCode"
+                    cost:
+                      type: number
+                      format: currency
                     reference:
                       type: string
                     technology:
@@ -3514,6 +3542,9 @@ paths:
                       $ref: "#/components/schemas/poleId"
                     country:
                       $ref: "#/components/schemas/countryCode"
+                    cost:
+                      type: number
+                      format: currency
                     technology:
                       $ref: "#/components/schemas/cableTechnology"
                     configuration:
@@ -3585,6 +3616,9 @@ paths:
                       $ref: "#/components/schemas/cableId"
                     country:
                       $ref: "#/components/schemas/countryCode"
+                    cost:
+                      type: number
+                      format: currency
                     reference:
                       type: string
                     ductId:
@@ -3611,6 +3645,9 @@ paths:
                       $ref: "#/components/schemas/poleId"
                     country:
                       $ref: "#/components/schemas/countryCode"
+                    cost:
+                      type: number
+                      format: currency
                     technology:
                       $ref: "#/components/schemas/cableTechnology"
                     configuration:
@@ -3687,6 +3724,11 @@ paths:
                         $ref: "#/components/schemas/cableId"
                       ductId:
                         $ref: "#/components/schemas/ductId"
+                      country:
+                        $ref: "#/components/schemas/countryCode"
+                      cost:
+                        type: number
+                        format: currency
                       technology:
                         $ref: "#/components/schemas/cableTechnology"
                       configuration:
@@ -3707,6 +3749,11 @@ paths:
                         $ref: "#/components/schemas/cableId"
                       poleId:
                         $ref: "#/components/schemas/poleId"
+                      country:
+                        $ref: "#/components/schemas/countryCode"
+                      cost:
+                        type: number
+                        format: currency
                       technology:
                         $ref: "#/components/schemas/cableTechnology"
                       configuration:
@@ -4101,6 +4148,9 @@ paths:
                       $ref: "#/components/schemas/dateTime"
                     country:
                       $ref: "#/components/schemas/countryCode"
+                    cost:
+                      type: number
+                      format: currency
                     trenchId:
                       $ref: "#/components/schemas/trenchId"
                     purpose:
@@ -4164,6 +4214,9 @@ paths:
                     $ref: "#/components/schemas/dateTime"
                   country:
                     $ref: "#/components/schemas/countryCode"
+                  cost:
+                    type: number
+                    format: currency
                   trenchId:
                     $ref: "#/components/schemas/trenchId"
                   purpose:
@@ -4276,6 +4329,9 @@ paths:
                   $ref: "#/components/schemas/ductPurpose"
                 country:
                   $ref: "#/components/schemas/countryCode"
+                cost:
+                  type: number
+                  format: currency
                 category:
                   $ref: "#/components/schemas/ductSizeCategory"
                 configuration:
@@ -4500,6 +4556,9 @@ paths:
                   $ref: "#/components/schemas/trenchId"
                 country:
                   $ref: "#/components/schemas/countryCode"
+                cost:
+                  type: number
+                  format: currency
                 purpose:
                   $ref: "#/components/schemas/ductPurpose"
                 category:
@@ -4568,6 +4627,9 @@ paths:
                   $ref: "#/components/schemas/trenchId"
                 country:
                   $ref: "#/components/schemas/countryCode"
+                cost:
+                  type: number
+                  format: currency
                 purpose:
                   $ref: "#/components/schemas/ductPurpose"
                 category:
@@ -4625,6 +4687,11 @@ paths:
                 properties:
                   ductId:
                     $ref: "#/components/schemas/ductId"
+                  country:
+                    $ref: "#/components/schemas/countryCode"
+                  cost:
+                    type: number
+                    format: currency
                   trenchId:
                     $ref: "#/components/schemas/trenchId"
                   purpose:
@@ -4698,6 +4765,9 @@ paths:
                       $ref: "#/components/schemas/serviceId"
                     country:
                       $ref: "#/components/schemas/countryCode"
+                    cost:
+                      type: number
+                      format: currency
                     point:
                       $ref: "#/components/schemas/dateTime"
                     reference:
@@ -4813,6 +4883,9 @@ paths:
                     $ref: "#/components/schemas/dateTime"
                   country:
                     $ref: "#/components/schemas/countryCode"
+                  cost:
+                    type: number
+                    format: currency
                   reference:
                     type: string
                   customer:
@@ -5128,6 +5201,9 @@ paths:
               properties:
                 country:
                   $ref: "#/components/schemas/countryCode"
+                cost:
+                  type: number
+                  format: currency
                 reference:
                   type: string
                 customer:
@@ -5306,6 +5382,9 @@ paths:
               properties:
                 country:
                   $ref: "#/components/schemas/countryCode"
+                cost:
+                  type: number
+                  format: currency
                 reference:
                   type: string
                 customer:
@@ -5437,6 +5516,9 @@ paths:
               properties:
                 country:
                   $ref: "#/components/schemas/countryCode"
+                cost:
+                  type: number
+                  format: currency
                 reference:
                   type: string
                 customer:
@@ -5633,6 +5715,9 @@ paths:
                     type: string
                   country:
                     $ref: "#/components/schemas/countryCode"
+                  cost:
+                    type: number
+                    format: currency
                   customer:
                     type: object
                     required:
@@ -5803,6 +5888,9 @@ paths:
                     type:
                       $ref: "#/components/schemas/siteType"
                       default: unclassified
+                    cost:
+                      type: number
+                      format: currency
                     location:
                       type: object
                       properties:
@@ -5877,6 +5965,9 @@ paths:
                   type:
                     $ref: "#/components/schemas/siteType"
                     default: unclassified
+                  cost:
+                    type: number
+                    format: currency
                   location:
                     type: object
                     required:
@@ -6097,6 +6188,9 @@ paths:
                 type:
                   $ref: "#/components/schemas/siteType"
                   default: unclassified
+                cost:
+                  type: number
+                  format: currency
                 location:
                   type: object
                   required:
@@ -6305,6 +6399,9 @@ paths:
                   $ref: "#/components/schemas/areaType"
                 type:
                   $ref: "#/components/schemas/siteType"
+                cost:
+                  type: number
+                  format: currency
                 location:
                   type: object
                   properties:
@@ -6404,6 +6501,9 @@ paths:
                   $ref: "#/components/schemas/areaType"
                 type:
                   $ref: "#/components/schemas/siteType"
+                cost:
+                  type: number
+                  format: currency
                 location:
                   type: object
                   required:
@@ -6525,6 +6625,11 @@ paths:
                     $ref: "#/components/schemas/areaType"
                   type:
                     $ref: "#/components/schemas/siteType"
+                  country:
+                    $ref: "#/components/schemas/countryCode"
+                  cost:
+                    type: number
+                    format: currency
                   location:
                     type: object
                     properties:
@@ -6659,6 +6764,9 @@ paths:
                       $ref: "#/components/schemas/dateTime"
                     country:
                       $ref: "#/components/schemas/countryCode"
+                    cost:
+                      type: number
+                      format: currency
                     reference:
                       type: string
                     commissioned:
@@ -6731,6 +6839,9 @@ paths:
                     $ref: "#/components/schemas/dateTime"
                   country:
                     $ref: "#/components/schemas/countryCode"
+                  cost:
+                    type: number
+                    format: currency
                   reference:
                     type: string
                   commissioned:
@@ -6888,6 +6999,9 @@ paths:
               properties:
                 country:
                   $ref: "#/components/schemas/countryCode"
+                cost:
+                  type: number
+                  format: currency
                 reference:
                   type: string
                 commissioned:
@@ -7004,6 +7118,9 @@ paths:
               properties:
                 country:
                   $ref: "#/components/schemas/countryCode"
+                cost:
+                  type: number
+                  format: currency
                 reference:
                   type: string
                 commissioned:
@@ -7089,6 +7206,9 @@ paths:
               properties:
                 country:
                   $ref: "#/components/schemas/countryCode"
+                cost:
+                  type: number
+                  format: currency
                 reference:
                   type: string
                 commissioned:
@@ -7223,6 +7343,9 @@ paths:
                     type: string
                   country:
                     $ref: "#/components/schemas/countryCode"
+                  cost:
+                    type: number
+                    format: currency
                   commissioned:
                     $ref: "#/components/schemas/date"
                   decommissioned:
@@ -7539,6 +7662,9 @@ paths:
                       $ref: "#/components/schemas/dateTime"
                     country:
                       $ref: "#/components/schemas/countryCode"
+                    cost:
+                      type: number
+                      format: currency
                     reference:
                       type: string
                     host:
@@ -7780,6 +7906,9 @@ paths:
                     $ref: "#/components/schemas/dateTime"
                   country:
                     $ref: "#/components/schemas/countryCode"
+                  cost:
+                    type: number
+                    format: currency
                   reference:
                     type: string
                   host:
@@ -8161,6 +8290,9 @@ paths:
               properties:
                 country:
                   $ref: "#/components/schemas/countryCode"
+                cost:
+                  type: number
+                  format: currency
                 reference:
                   type: string
                 host:
@@ -8461,6 +8593,9 @@ paths:
                     $ref: "#/components/schemas/neId"
                   country:
                     $ref: "#/components/schemas/countryCode"
+                  cost:
+                    type: number
+                    format: currency
                   reference:
                     type: string
                   host:
@@ -8721,6 +8856,9 @@ paths:
                   format: hostname
                 country:
                   $ref: "#/components/schemas/countryCode"
+                cost:
+                  type: number
+                  format: currency
                 reference:
                   type: string
                 commissioned:
@@ -8962,6 +9100,9 @@ paths:
                   format: hostname
                 country:
                   $ref: "#/components/schemas/countryCode"
+                cost:
+                  type: number
+                  format: currency
                 reference:
                   type: string
                 commissioned:
@@ -9130,6 +9271,9 @@ paths:
                           default: unclassified
                         unit:
                           $ref: "#/components/schemas/sizeUnit"
+                        cost:
+                          type: number
+                          format: currency
                     demographics:
                       type: object
                       required:
@@ -9253,6 +9397,9 @@ paths:
                         default: unclassified
                       unit:
                         $ref: "#/components/schemas/sizeUnit"
+                      cost:
+                        type: number
+                        format: currency
                   demographics:
                     type: object
                     required:
@@ -9526,6 +9673,9 @@ paths:
                       default: unclassified
                     unit:
                       $ref: "#/components/schemas/sizeUnit"
+                    cost:
+                      type: number
+                      format: currency
                 demographics:
                   type: object
                   required:
@@ -9771,6 +9921,9 @@ paths:
                       default: unclassified
                     unit:
                       $ref: "#/components/schemas/sizeUnit"
+                    cost:
+                      type: number
+                      format: currency
                 demographics:
                   type: object
                   required:
@@ -9933,6 +10086,9 @@ paths:
                       default: unclassified
                     unit:
                       $ref: "#/components/schemas/sizeUnit"
+                    cost:
+                      type: number
+                      format: currency
                 demographics:
                   type: object
                   properties:
@@ -10050,6 +10206,9 @@ paths:
                         defalt: unclassified
                       unit:
                         $ref: "#/components/schemas/sizeUnit"
+                      cost:
+                        type: number
+                        format: currency
                   demographics:
                     type: object
                     properties:
@@ -10242,6 +10401,9 @@ paths:
                           $ref: "#/components/schemas/sizeUnit"
                         type:
                           $ref: "#/components/schemas/constructionType"
+                        cost:
+                          type: number
+                          format: currency
                     demographics:
                       type: object
                       required:
@@ -10373,6 +10535,9 @@ paths:
                         $ref: "#/components/schemas/sizeUnit"
                       type:
                         $ref: "#/components/schemas/constructionType"
+                      cost:
+                        type: number
+                        format: currency
                   demographics:
                     type: object
                     required:
@@ -10556,6 +10721,9 @@ paths:
                       $ref: "#/components/schemas/sizeUnit"
                     type:
                       $ref: "#/components/schemas/constructionType"
+                    cost:
+                      type: number
+                      format: currency
                 demographics:
                   type: object
                   required:
@@ -10656,6 +10824,7 @@ paths:
                     classifier: low
                     unit: m
                     type: micro
+                    cost: 2000
                   demographics:
                     premises:
                       passed: 4
@@ -10820,6 +10989,9 @@ paths:
                       $ref: "#/components/schemas/sizeUnit"
                     type:
                       $ref: "#/components/schemas/constructionType"
+                    cost:
+                      type: number
+                      format: currency
                 demographics:
                   type: object
                   required:
@@ -10920,6 +11092,7 @@ paths:
                     classifier: low
                     unit: m
                     type: micro
+                    cost: 2500
                   demographics:
                     premises:
                       passed: 4
@@ -10999,6 +11172,9 @@ paths:
                       $ref: "#/components/schemas/sizeUnit"
                     type:
                       $ref: "#/components/schemas/constructionType"
+                    cost:
+                      type: number
+                      format: currency
                 demographics:
                   type: object
                   properties:
@@ -11131,6 +11307,9 @@ paths:
                         $ref: "#/components/schemas/sizeUnit"
                       type:
                         $ref: "#/components/schemas/constructionType"
+                      cost:
+                        type: number
+                        format: currency
                   demographics:
                     type: object
                     properties:
@@ -11212,6 +11391,7 @@ paths:
                       depthClassifier: low
                       unit: m
                       type: micro
+                      cost: 2500
                     demographics:
                       premises:
                         passed: 4

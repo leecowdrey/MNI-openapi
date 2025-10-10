@@ -17,7 +17,7 @@
       "url": "https://www.merkator.com/",
       "x-copyright": "© 2024-2025 Merkator nv/sa. All rights reserved."
     },
-    "version": "1.0.0.1759849619"
+    "version": "1.0.0.1760112258"
   },
   "externalDocs": {
     "description": "Application User Manual",
@@ -4759,6 +4759,10 @@
                           "country": {
                             "$ref": "#/components/schemas/countryCode"
                           },
+                          "cost": {
+                            "type": "number",
+                            "format": "currency"
+                          },
                           "poleId": {
                             "$ref": "#/components/schemas/poleId"
                           },
@@ -4790,6 +4794,13 @@
                         "properties": {
                           "cableId": {
                             "$ref": "#/components/schemas/cableId"
+                          },
+                          "country": {
+                            "$ref": "#/components/schemas/countryCode"
+                          },
+                          "cost": {
+                            "type": "number",
+                            "format": "currency"
                           },
                           "ductId": {
                             "$ref": "#/components/schemas/ductId"
@@ -4874,6 +4885,10 @@
                         "country": {
                           "$ref": "#/components/schemas/countryCode"
                         },
+                        "cost": {
+                          "type": "number",
+                          "format": "currency"
+                        },
                         "poleId": {
                           "$ref": "#/components/schemas/poleId"
                         },
@@ -4913,6 +4928,13 @@
                         "cableId": {
                           "description": "optionally specify the internal cable identifier",
                           "$ref": "#/components/schemas/cableId"
+                        },
+                        "country": {
+                          "$ref": "#/components/schemas/countryCode"
+                        },
+                        "cost": {
+                          "type": "number",
+                          "format": "currency"
                         },
                         "ductId": {
                           "$ref": "#/components/schemas/ductId"
@@ -5077,6 +5099,10 @@
                       "country": {
                         "$ref": "#/components/schemas/countryCode"
                       },
+                      "cost": {
+                        "type": "number",
+                        "format": "currency"
+                      },
                       "reference": {
                         "type": "string"
                       },
@@ -5121,6 +5147,10 @@
                       "country": {
                         "$ref": "#/components/schemas/countryCode"
                       },
+                      "cost": {
+                        "type": "number",
+                        "format": "currency"
+                      },
                       "reference": {
                         "type": "string"
                       },
@@ -5154,6 +5184,7 @@
                   "value": {
                     "ductId": "4f61c862-cbd6-4455-9cf2-3d478406c693",
                     "country": "BEL",
+                    "cost": 2.5,
                     "technology": "ethernet",
                     "configuration": {
                       "category": "Cat6A",
@@ -5170,6 +5201,7 @@
                   "value": {
                     "poleId": "4f61c862-cbd6-4455-9cf2-3d478406c693",
                     "country": "BEL",
+                    "cost": 7.5,
                     "technology": "singleFiber",
                     "configuration": {
                       "strands": 1,
@@ -5184,6 +5216,7 @@
                 "multi": {
                   "value": {
                     "poleId": "4f61c862-cbd6-4455-9cf2-3d478406c693",
+                    "cost": 15.25,
                     "technology": "multiFiber",
                     "configuration": {
                       "ribbons": 12,
@@ -5443,6 +5476,10 @@
                       "country": {
                         "$ref": "#/components/schemas/countryCode"
                       },
+                      "cost": {
+                        "type": "number",
+                        "format": "currency"
+                      },
                       "reference": {
                         "type": "string"
                       },
@@ -5483,6 +5520,10 @@
                       },
                       "country": {
                         "$ref": "#/components/schemas/countryCode"
+                      },
+                      "cost": {
+                        "type": "number",
+                        "format": "currency"
                       },
                       "technology": {
                         "$ref": "#/components/schemas/cableTechnology"
@@ -5593,6 +5634,10 @@
                       "country": {
                         "$ref": "#/components/schemas/countryCode"
                       },
+                      "cost": {
+                        "type": "number",
+                        "format": "currency"
+                      },
                       "reference": {
                         "type": "string"
                       },
@@ -5633,6 +5678,10 @@
                       },
                       "country": {
                         "$ref": "#/components/schemas/countryCode"
+                      },
+                      "cost": {
+                        "type": "number",
+                        "format": "currency"
                       },
                       "technology": {
                         "$ref": "#/components/schemas/cableTechnology"
@@ -5750,6 +5799,13 @@
                         "ductId": {
                           "$ref": "#/components/schemas/ductId"
                         },
+                        "country": {
+                          "$ref": "#/components/schemas/countryCode"
+                        },
+                        "cost": {
+                          "type": "number",
+                          "format": "currency"
+                        },
                         "technology": {
                           "$ref": "#/components/schemas/cableTechnology"
                         },
@@ -5781,6 +5837,13 @@
                         },
                         "poleId": {
                           "$ref": "#/components/schemas/poleId"
+                        },
+                        "country": {
+                          "$ref": "#/components/schemas/countryCode"
+                        },
+                        "cost": {
+                          "type": "number",
+                          "format": "currency"
                         },
                         "technology": {
                           "$ref": "#/components/schemas/cableTechnology"
@@ -6427,6 +6490,10 @@
                       "country": {
                         "$ref": "#/components/schemas/countryCode"
                       },
+                      "cost": {
+                        "type": "number",
+                        "format": "currency"
+                      },
                       "trenchId": {
                         "$ref": "#/components/schemas/trenchId"
                       },
@@ -6516,6 +6583,10 @@
                     },
                     "country": {
                       "$ref": "#/components/schemas/countryCode"
+                    },
+                    "cost": {
+                      "type": "number",
+                      "format": "currency"
                     },
                     "trenchId": {
                       "$ref": "#/components/schemas/trenchId"
@@ -6691,6 +6762,10 @@
                   },
                   "country": {
                     "$ref": "#/components/schemas/countryCode"
+                  },
+                  "cost": {
+                    "type": "number",
+                    "format": "currency"
                   },
                   "category": {
                     "$ref": "#/components/schemas/ductSizeCategory"
@@ -7062,6 +7137,10 @@
                   "country": {
                     "$ref": "#/components/schemas/countryCode"
                   },
+                  "cost": {
+                    "type": "number",
+                    "format": "currency"
+                  },
                   "purpose": {
                     "$ref": "#/components/schemas/ductPurpose"
                   },
@@ -7164,6 +7243,10 @@
                   "country": {
                     "$ref": "#/components/schemas/countryCode"
                   },
+                  "cost": {
+                    "type": "number",
+                    "format": "currency"
+                  },
                   "purpose": {
                     "$ref": "#/components/schemas/ductPurpose"
                   },
@@ -7254,6 +7337,13 @@
                   "properties": {
                     "ductId": {
                       "$ref": "#/components/schemas/ductId"
+                    },
+                    "country": {
+                      "$ref": "#/components/schemas/countryCode"
+                    },
+                    "cost": {
+                      "type": "number",
+                      "format": "currency"
                     },
                     "trenchId": {
                       "$ref": "#/components/schemas/trenchId"
@@ -7363,6 +7453,10 @@
                       },
                       "country": {
                         "$ref": "#/components/schemas/countryCode"
+                      },
+                      "cost": {
+                        "type": "number",
+                        "format": "currency"
                       },
                       "point": {
                         "$ref": "#/components/schemas/dateTime"
@@ -7529,6 +7623,10 @@
                     },
                     "country": {
                       "$ref": "#/components/schemas/countryCode"
+                    },
+                    "cost": {
+                      "type": "number",
+                      "format": "currency"
                     },
                     "reference": {
                       "type": "string"
@@ -8030,6 +8128,10 @@
                   "country": {
                     "$ref": "#/components/schemas/countryCode"
                   },
+                  "cost": {
+                    "type": "number",
+                    "format": "currency"
+                  },
                   "reference": {
                     "type": "string"
                   },
@@ -8291,6 +8393,10 @@
                   "country": {
                     "$ref": "#/components/schemas/countryCode"
                   },
+                  "cost": {
+                    "type": "number",
+                    "format": "currency"
+                  },
                   "reference": {
                     "type": "string"
                   },
@@ -8488,6 +8594,10 @@
                 "properties": {
                   "country": {
                     "$ref": "#/components/schemas/countryCode"
+                  },
+                  "cost": {
+                    "type": "number",
+                    "format": "currency"
                   },
                   "reference": {
                     "type": "string"
@@ -8782,6 +8892,10 @@
                     "country": {
                       "$ref": "#/components/schemas/countryCode"
                     },
+                    "cost": {
+                      "type": "number",
+                      "format": "currency"
+                    },
                     "customer": {
                       "type": "object",
                       "required": [
@@ -9027,6 +9141,10 @@
                         "$ref": "#/components/schemas/siteType",
                         "default": "unclassified"
                       },
+                      "cost": {
+                        "type": "number",
+                        "format": "currency"
+                      },
                       "location": {
                         "type": "object",
                         "properties": {
@@ -9135,6 +9253,10 @@
                     "type": {
                       "$ref": "#/components/schemas/siteType",
                       "default": "unclassified"
+                    },
+                    "cost": {
+                      "type": "number",
+                      "format": "currency"
                     },
                     "location": {
                       "type": "object",
@@ -9482,6 +9604,10 @@
                     "$ref": "#/components/schemas/siteType",
                     "default": "unclassified"
                   },
+                  "cost": {
+                    "type": "number",
+                    "format": "currency"
+                  },
                   "location": {
                     "type": "object",
                     "required": [
@@ -9812,6 +9938,10 @@
                   "type": {
                     "$ref": "#/components/schemas/siteType"
                   },
+                  "cost": {
+                    "type": "number",
+                    "format": "currency"
+                  },
                   "location": {
                     "type": "object",
                     "properties": {
@@ -9961,6 +10091,10 @@
                   },
                   "type": {
                     "$ref": "#/components/schemas/siteType"
+                  },
+                  "cost": {
+                    "type": "number",
+                    "format": "currency"
                   },
                   "location": {
                     "type": "object",
@@ -10148,6 +10282,13 @@
                     },
                     "type": {
                       "$ref": "#/components/schemas/siteType"
+                    },
+                    "country": {
+                      "$ref": "#/components/schemas/countryCode"
+                    },
+                    "cost": {
+                      "type": "number",
+                      "format": "currency"
                     },
                     "location": {
                       "type": "object",
@@ -10357,6 +10498,10 @@
                       "country": {
                         "$ref": "#/components/schemas/countryCode"
                       },
+                      "cost": {
+                        "type": "number",
+                        "format": "currency"
+                      },
                       "reference": {
                         "type": "string"
                       },
@@ -10460,6 +10605,10 @@
                     },
                     "country": {
                       "$ref": "#/components/schemas/countryCode"
+                    },
+                    "cost": {
+                      "type": "number",
+                      "format": "currency"
                     },
                     "reference": {
                       "type": "string"
@@ -10709,6 +10858,10 @@
                   "country": {
                     "$ref": "#/components/schemas/countryCode"
                   },
+                  "cost": {
+                    "type": "number",
+                    "format": "currency"
+                  },
                   "reference": {
                     "type": "string"
                   },
@@ -10885,6 +11038,10 @@
                   "country": {
                     "$ref": "#/components/schemas/countryCode"
                   },
+                  "cost": {
+                    "type": "number",
+                    "format": "currency"
+                  },
                   "reference": {
                     "type": "string"
                   },
@@ -11017,6 +11174,10 @@
                 "properties": {
                   "country": {
                     "$ref": "#/components/schemas/countryCode"
+                  },
+                  "cost": {
+                    "type": "number",
+                    "format": "currency"
                   },
                   "reference": {
                     "type": "string"
@@ -11226,6 +11387,10 @@
                     },
                     "country": {
                       "$ref": "#/components/schemas/countryCode"
+                    },
+                    "cost": {
+                      "type": "number",
+                      "format": "currency"
                     },
                     "commissioned": {
                       "$ref": "#/components/schemas/date"
@@ -11767,6 +11932,10 @@
                       "country": {
                         "$ref": "#/components/schemas/countryCode"
                       },
+                      "cost": {
+                        "type": "number",
+                        "format": "currency"
+                      },
                       "reference": {
                         "type": "string"
                       },
@@ -12101,6 +12270,10 @@
                     },
                     "country": {
                       "$ref": "#/components/schemas/countryCode"
+                    },
+                    "cost": {
+                      "type": "number",
+                      "format": "currency"
                     },
                     "reference": {
                       "type": "string"
@@ -12665,6 +12838,10 @@
                   "country": {
                     "$ref": "#/components/schemas/countryCode"
                   },
+                  "cost": {
+                    "type": "number",
+                    "format": "currency"
+                  },
                   "reference": {
                     "type": "string"
                   },
@@ -13092,6 +13269,10 @@
                     "country": {
                       "$ref": "#/components/schemas/countryCode"
                     },
+                    "cost": {
+                      "type": "number",
+                      "format": "currency"
+                    },
                     "reference": {
                       "type": "string"
                     },
@@ -13450,6 +13631,10 @@
                   "country": {
                     "$ref": "#/components/schemas/countryCode"
                   },
+                  "cost": {
+                    "type": "number",
+                    "format": "currency"
+                  },
                   "reference": {
                     "type": "string"
                   },
@@ -13787,6 +13972,10 @@
                   "country": {
                     "$ref": "#/components/schemas/countryCode"
                   },
+                  "cost": {
+                    "type": "number",
+                    "format": "currency"
+                  },
                   "reference": {
                     "type": "string"
                   },
@@ -14040,6 +14229,10 @@
                           },
                           "unit": {
                             "$ref": "#/components/schemas/sizeUnit"
+                          },
+                          "cost": {
+                            "type": "number",
+                            "format": "currency"
                           }
                         }
                       },
@@ -14221,6 +14414,10 @@
                         },
                         "unit": {
                           "$ref": "#/components/schemas/sizeUnit"
+                        },
+                        "cost": {
+                          "type": "number",
+                          "format": "currency"
                         }
                       }
                     },
@@ -14655,6 +14852,10 @@
                       },
                       "unit": {
                         "$ref": "#/components/schemas/sizeUnit"
+                      },
+                      "cost": {
+                        "type": "number",
+                        "format": "currency"
                       }
                     }
                   },
@@ -15029,6 +15230,10 @@
                       },
                       "unit": {
                         "$ref": "#/components/schemas/sizeUnit"
+                      },
+                      "cost": {
+                        "type": "number",
+                        "format": "currency"
                       }
                     }
                   },
@@ -15266,6 +15471,10 @@
                       },
                       "unit": {
                         "$ref": "#/components/schemas/sizeUnit"
+                      },
+                      "cost": {
+                        "type": "number",
+                        "format": "currency"
                       }
                     }
                   },
@@ -15449,6 +15658,10 @@
                         },
                         "unit": {
                           "$ref": "#/components/schemas/sizeUnit"
+                        },
+                        "cost": {
+                          "type": "number",
+                          "format": "currency"
                         }
                       }
                     },
@@ -15745,6 +15958,10 @@
                           },
                           "type": {
                             "$ref": "#/components/schemas/constructionType"
+                          },
+                          "cost": {
+                            "type": "number",
+                            "format": "currency"
                           }
                         }
                       },
@@ -15937,6 +16154,10 @@
                         },
                         "type": {
                           "$ref": "#/components/schemas/constructionType"
+                        },
+                        "cost": {
+                          "type": "number",
+                          "format": "currency"
                         }
                       }
                     },
@@ -16213,6 +16434,10 @@
                       },
                       "type": {
                         "$ref": "#/components/schemas/constructionType"
+                      },
+                      "cost": {
+                        "type": "number",
+                        "format": "currency"
                       }
                     }
                   },
@@ -16356,7 +16581,8 @@
                       "depth": 0.5,
                       "classifier": "low",
                       "unit": "m",
-                      "type": "micro"
+                      "type": "micro",
+                      "cost": 2000
                     },
                     "demographics": {
                       "premises": {
@@ -16617,6 +16843,10 @@
                       },
                       "type": {
                         "$ref": "#/components/schemas/constructionType"
+                      },
+                      "cost": {
+                        "type": "number",
+                        "format": "currency"
                       }
                     }
                   },
@@ -16760,7 +16990,8 @@
                       "depth": 0.5,
                       "classifier": "low",
                       "unit": "m",
-                      "type": "micro"
+                      "type": "micro",
+                      "cost": 2500
                     },
                     "demographics": {
                       "premises": {
@@ -16882,6 +17113,10 @@
                       },
                       "type": {
                         "$ref": "#/components/schemas/constructionType"
+                      },
+                      "cost": {
+                        "type": "number",
+                        "format": "currency"
                       }
                     }
                   },
@@ -17091,6 +17326,10 @@
                         },
                         "type": {
                           "$ref": "#/components/schemas/constructionType"
+                        },
+                        "cost": {
+                          "type": "number",
+                          "format": "currency"
                         }
                       }
                     },
@@ -17210,7 +17449,8 @@
                         "depth": 0.5,
                         "depthClassifier": "low",
                         "unit": "m",
-                        "type": "micro"
+                        "type": "micro",
+                        "cost": 2500
                       },
                       "demographics": {
                         "premises": {
