@@ -17,7 +17,7 @@
       "url": "https://www.merkator.com/",
       "x-copyright": "© 2024-2025 Merkator nv/sa. All rights reserved."
     },
-    "version": "1.0.0.1760112258"
+    "version": "1.0.0.1760367544"
   },
   "externalDocs": {
     "description": "Application User Manual",
@@ -27323,6 +27323,13 @@
             "minimum": 1,
             "maximum": 1000
           },
+          "rate": {
+            "description": "maximum transmission rate",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 768,
+            "default": 10
+          },
           "unit": {
             "description": "bandwidth unit",
             "type": "string",
@@ -27367,6 +27374,13 @@
             "type": "integer",
             "minimum": 1,
             "maximum": 1000
+          },
+          "rate": {
+            "description": "maximum transmission rate",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 768,
+            "default": 10
           },
           "unit": {
             "description": "bandwidth unit",
