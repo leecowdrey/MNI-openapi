@@ -15,7 +15,7 @@ info:
     name: Proprietary License
     url: https://www.merkator.com/
     x-copyright: © 2024-2025 Merkator nv/sa. All rights reserved.
-  version: 1.0.0.1760367544
+  version: 1.0.0.1760627524
 externalDocs:
   description: Application User Manual
   url: /mni/v1/doc/html/user-guide/index.html
@@ -18156,13 +18156,6 @@ components:
           enum:
             - SMOF
             - MMOF
-        channels:
-          $ref: "#/components/schemas/channels"
-        width:
-          description: channel bandwith width
-          type: integer
-          minimum: 1
-          maximum: 1000
     portState:
       description: usage state of interface port
       type: string
@@ -18171,6 +18164,7 @@ components:
         - used
         - reserved
         - faulty
+        - predicted
     countryCode:
       description: |
         ISO 3166-1 alpha-3 three-letter country codes
@@ -19298,6 +19292,7 @@ components:
         - used
         - reserved
         - faulty
+        - predicted
     cableCapacityState:
       description: |
         State capacity for cables
@@ -19433,6 +19428,7 @@ components:
         - used
         - reserved
         - faulty
+        - predicted
     ductPurpose:
       description: |
         intended contents of the duct, *note*: `cable` means telecommunications cables including `coax`,`copper` for twisted-pair copper cable,`ethernet`,`fiber` etc.
@@ -19962,6 +19958,8 @@ components:
         - free
         - used
         - reserved
+        - faulty
+        - predicted
     rackId:
       description: internal (telegraph) pole identifier
       type: string

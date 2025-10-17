@@ -17,7 +17,7 @@
       "url": "https://www.merkator.com/",
       "x-copyright": "© 2024-2025 Merkator nv/sa. All rights reserved."
     },
-    "version": "1.0.0.1760367544"
+    "version": "1.0.0.1760627524"
   },
   "externalDocs": {
     "description": "Application User Manual",
@@ -26636,15 +26636,6 @@
               "SMOF",
               "MMOF"
             ]
-          },
-          "channels": {
-            "$ref": "#/components/schemas/channels"
-          },
-          "width": {
-            "description": "channel bandwith width",
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 1000
           }
         }
       },
@@ -26655,7 +26646,8 @@
           "free",
           "used",
           "reserved",
-          "faulty"
+          "faulty",
+          "predicted"
         ]
       },
       "countryCode": {
@@ -27400,7 +27392,8 @@
           "free",
           "used",
           "reserved",
-          "faulty"
+          "faulty",
+          "predicted"
         ]
       },
       "cableCapacityState": {
@@ -27599,7 +27592,8 @@
           "free",
           "used",
           "reserved",
-          "faulty"
+          "faulty",
+          "predicted"
         ]
       },
       "ductPurpose": {
@@ -28244,7 +28238,9 @@
         "enum": [
           "free",
           "used",
-          "reserved"
+          "reserved",
+          "faulty",
+          "predicted"
         ]
       },
       "rackId": {
