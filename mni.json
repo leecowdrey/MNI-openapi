@@ -17,7 +17,7 @@
       "url": "https://www.merkator.com/",
       "x-copyright": "© 2024-2025 Merkator nv/sa. All rights reserved."
     },
-    "version": "1.0.0.1760627524"
+    "version": "1.0.0.1761213443"
   },
   "externalDocs": {
     "description": "Application User Manual",
@@ -4067,7 +4067,7 @@
                     "alerts": [
                       {
                         "alertId": "ff9bf3a0-682e-43ff-b38c-0ab962ef2fe7",
-                        "kafkaProducerId": "7e3360a0-ce0e-406c-b3a3-d04c6c5500c",
+                        "kafkaProducerId": "5b1ef698-1cf3-4f12-a671-d60ff283db41",
                         "topic": "mni-L23-classifiers"
                       }
                     ]
@@ -5092,8 +5092,7 @@
                     "required": [
                       "poleId",
                       "technology",
-                      "configuration",
-                      "state"
+                      "configuration"
                     ],
                     "properties": {
                       "country": {
@@ -5137,8 +5136,7 @@
                     "required": [
                       "ductId",
                       "technology",
-                      "configuration",
-                      "state"
+                      "configuration"
                     ],
                     "properties": {
                       "ductId": {
@@ -5159,9 +5157,6 @@
                       },
                       "configuration": {
                         "$ref": "#/components/schemas/cableConfiguration"
-                      },
-                      "state": {
-                        "$ref": "#/components/schemas/cableState"
                       },
                       "point": {
                         "$ref": "#/components/schemas/dateTime"
@@ -5189,9 +5184,9 @@
                     "configuration": {
                       "category": "Cat6A",
                       "rate": 10,
-                      "unit": "Gbps"
+                      "unit": "Gbps",
+                      "state": "free"
                     },
-                    "state": "free",
                     "source": "historical",
                     "probability": 1,
                     "delete": false
@@ -5205,7 +5200,17 @@
                     "technology": "singleFiber",
                     "configuration": {
                       "strands": 1,
-                      "mode": "SMOF"
+                      "mode": "SMOF",
+                      "states": [
+                        {
+                          "strand": 1,
+                          "state": "used"
+                        },
+                        {
+                          "strand": 2,
+                          "state": "used"
+                        }
+                      ]
                     },
                     "state": "free",
                     "source": "historical",
@@ -5221,7 +5226,19 @@
                     "configuration": {
                       "ribbons": 12,
                       "strands": 24,
-                      "mode": "MMOF"
+                      "mode": "MMOF",
+                      "states": [
+                        {
+                          "ribbon": 1,
+                          "strand": 1,
+                          "state": "used"
+                        },
+                        {
+                          "ribbon": 1,
+                          "strand": 2,
+                          "state": "used"
+                        }
+                      ]
                     },
                     "state": "free",
                     "source": "historical",
@@ -5466,8 +5483,7 @@
                     "required": [
                       "ductId",
                       "technology",
-                      "configuration",
-                      "state"
+                      "configuration"
                     ],
                     "properties": {
                       "ductId": {
@@ -5489,9 +5505,6 @@
                       "configuration": {
                         "$ref": "#/components/schemas/cableConfiguration"
                       },
-                      "state": {
-                        "$ref": "#/components/schemas/cableState"
-                      },
                       "point": {
                         "$ref": "#/components/schemas/dateTime"
                       },
@@ -5511,8 +5524,7 @@
                     "required": [
                       "poleId",
                       "technology",
-                      "configuration",
-                      "state"
+                      "configuration"
                     ],
                     "properties": {
                       "poleId": {
@@ -5530,9 +5542,6 @@
                       },
                       "configuration": {
                         "$ref": "#/components/schemas/cableConfiguration"
-                      },
-                      "state": {
-                        "$ref": "#/components/schemas/cableState"
                       },
                       "point": {
                         "$ref": "#/components/schemas/dateTime"
@@ -5557,11 +5566,32 @@
                     "country": "BEL",
                     "technology": "multiFiber",
                     "configuration": {
-                      "ribbons": 24,
-                      "strands": 48,
-                      "mode": "MMOF"
+                      "ribbons": 2,
+                      "strands": 2,
+                      "mode": "MMOF",
+                      "states": [
+                        {
+                          "ribbon": 1,
+                          "strand": 1,
+                          "state": "free"
+                        },
+                        {
+                          "ribbon": 1,
+                          "strand": 2,
+                          "state": "free"
+                        },
+                        {
+                          "ribbon": 2,
+                          "strand": 1,
+                          "state": "used"
+                        },
+                        {
+                          "ribbon": 2,
+                          "strand": 2,
+                          "state": "used"
+                        }
+                      ]
                     },
-                    "state": "used",
                     "source": "historical",
                     "probability": 1,
                     "delete": false
@@ -5573,10 +5603,15 @@
                     "country": "BEL",
                     "technology": "singleFiber",
                     "configuration": {
-                      "strands": 18,
-                      "mode": "SMOF"
+                      "strands": 1,
+                      "mode": "SMOF",
+                      "states": [
+                        {
+                          "strand": 1,
+                          "state": "used"
+                        }
+                      ]
                     },
-                    "state": "used",
                     "source": "historical",
                     "probability": 1,
                     "delete": false
@@ -5650,9 +5685,6 @@
                       "configuration": {
                         "$ref": "#/components/schemas/cableConfiguration"
                       },
-                      "state": {
-                        "$ref": "#/components/schemas/cableState"
-                      },
                       "point": {
                         "$ref": "#/components/schemas/dateTime"
                       },
@@ -5689,9 +5721,6 @@
                       "configuration": {
                         "$ref": "#/components/schemas/cableConfiguration"
                       },
-                      "state": {
-                        "$ref": "#/components/schemas/cableState"
-                      },
                       "point": {
                         "$ref": "#/components/schemas/dateTime"
                       },
@@ -5718,9 +5747,15 @@
                     "configuration": {
                       "ribbons": 24,
                       "strands": 48,
-                      "mode": "MMOF"
+                      "mode": "MMOF",
+                      "states": [
+                        {
+                          "ribbon": 1,
+                          "strand": 1,
+                          "state": "free"
+                        }
+                      ]
                     },
-                    "state": "free",
                     "source": "historical",
                     "probability": 1,
                     "delete": false
@@ -5734,9 +5769,14 @@
                     "technology": "singleFiber",
                     "configuration": {
                       "strands": 18,
-                      "mode": "SMOF"
+                      "mode": "SMOF",
+                      "states": [
+                        {
+                          "strand": 1,
+                          "state": "free"
+                        }
+                      ]
                     },
-                    "state": "free",
                     "source": "historical",
                     "probability": 1,
                     "delete": false
@@ -5851,9 +5891,6 @@
                         "configuration": {
                           "$ref": "#/components/schemas/cableConfiguration"
                         },
-                        "state": {
-                          "$ref": "#/components/schemas/cableState"
-                        },
                         "point": {
                           "$ref": "#/components/schemas/dateTime"
                         },
@@ -5878,10 +5915,10 @@
                       "configuration": {
                         "category": "Cat6A",
                         "rate": 10,
-                        "unit": "Gbps"
+                        "unit": "Gbps",
+                        "state": "used"
                       },
                       "technology": "ethernet",
-                      "state": "used",
                       "source": "historical",
                       "probability": 1,
                       "delete": false
@@ -5892,11 +5929,16 @@
                       "cableId": "5520aca1-4727-431a-aa9c-23f2e54b8a41",
                       "ductId": "4f61c862-cbd6-4455-9cf2-3d478406c693",
                       "configuration": {
-                        "strands": 48,
-                        "mode": "SMOF"
+                        "strands": 1,
+                        "mode": "SMOF",
+                        "states": [
+                          {
+                            "strand": 1,
+                            "state": "free"
+                          }
+                        ]
                       },
                       "technology": "singleFiber",
-                      "state": "free",
                       "source": "historical",
                       "probability": 1,
                       "delete": false
@@ -5907,12 +5949,33 @@
                       "cableId": "5520aca1-4727-431a-aa9c-23f2e54b8a41",
                       "ductId": "4f61c862-cbd6-4455-9cf2-3d478406c693",
                       "configuration": {
-                        "ribbons": 24,
-                        "strands": 48,
-                        "mode": "MMOF"
+                        "ribbons": 2,
+                        "strands": 2,
+                        "mode": "MMOF",
+                        "states": [
+                          {
+                            "ribbon": 1,
+                            "strand": 1,
+                            "state": "free"
+                          },
+                          {
+                            "ribbon": 1,
+                            "strand": 2,
+                            "state": "free"
+                          },
+                          {
+                            "ribbon": 2,
+                            "strand": 1,
+                            "state": "used"
+                          },
+                          {
+                            "ribbon": 2,
+                            "strand": 2,
+                            "state": "used"
+                          }
+                        ]
                       },
                       "technology": "multiFiber",
-                      "state": "free",
                       "source": "historical",
                       "probability": 1,
                       "delete": false
@@ -19299,7 +19362,7 @@
                   "sample": {
                     "value": [
                       {
-                        "kafkaProducerId": "7e3360a0-ce0e-406c-b3a3-d04c6c5500c",
+                        "kafkaProducerId": "5b1ef698-1cf3-4f12-a671-d60ff283db41",
                         "name": "west",
                         "clientId": "mni",
                         "producer": {
@@ -19391,7 +19454,7 @@
                 "sample": {
                   "value": [
                     {
-                      "kafkaProducerId": "7e3360a0-ce0e-406c-b3a3-d04c6c5500c",
+                      "kafkaProducerId": "5b1ef698-1cf3-4f12-a671-d60ff283db41",
                       "name": "west",
                       "clientId": "mni",
                       "producer": {
@@ -19431,7 +19494,7 @@
                 "examples": {
                   "sample": {
                     "value": [
-                      "7e3360a0-ce0e-406c-b3a3-d04c6c5500"
+                      "f3fd73b2-f08b-43f5-ad36-54299bf7dfab"
                     ]
                   }
                 }
@@ -19488,7 +19551,7 @@
                 "examples": {
                   "sample": {
                     "value": [
-                      "7e3360a0-ce0e-406c-b3a3-d04c6c5500c"
+                      "5b1ef698-1cf3-4f12-a671-d60ff283db41"
                     ]
                   }
                 }
@@ -19583,7 +19646,7 @@
                   }
                 },
                 "example": {
-                  "kafkaProducerId": "7e3360a0-ce0e-406c-b3a3-d04c6c5500c"
+                  "kafkaProducerId": "5b1ef698-1cf3-4f12-a671-d60ff283db41"
                 }
               }
             }
@@ -19680,7 +19743,7 @@
                 "examples": {
                   "sample": {
                     "value": {
-                      "kafkaProducerId": "7e3360a0-ce0e-406c-b3a3-d04c6c5500c",
+                      "kafkaProducerId": "5b1ef698-1cf3-4f12-a671-d60ff283db41",
                       "name": "west",
                       "clientId": "mni",
                       "producer": {
@@ -22671,7 +22734,7 @@
           }
         ],
         "tags": [
-          "Cables"
+          "Documents"
         ],
         "responses": {
           "200": {
@@ -26646,8 +26709,7 @@
           "free",
           "used",
           "reserved",
-          "faulty",
-          "predicted"
+          "faulty"
         ]
       },
       "countryCode": {
@@ -27180,9 +27242,8 @@
         "description": "copper cable properties",
         "type": "object",
         "required": [
-          "category",
-          "rate",
-          "unit"
+          "twistedPairs",
+          "state"
         ],
         "properties": {
           "twistedPairs": {
@@ -27191,6 +27252,9 @@
             "minimum": 1,
             "maximum": 48,
             "default": 7
+          },
+          "state": {
+            "$ref": "#/components/schemas/cableState"
           }
         }
       },
@@ -27200,7 +27264,8 @@
         "required": [
           "category",
           "rate",
-          "unit"
+          "unit",
+          "state"
         ],
         "properties": {
           "category": {
@@ -27233,6 +27298,9 @@
               "Tbps"
             ],
             "default": "Gbps"
+          },
+          "state": {
+            "$ref": "#/components/schemas/cableState"
           }
         }
       },
@@ -27243,7 +27311,8 @@
           "frequencyRange",
           "channels",
           "width",
-          "unit"
+          "unit",
+          "state"
         ],
         "properties": {
           "frequencyRange": {
@@ -27283,6 +27352,9 @@
               "MHz",
               "GHz"
             ]
+          },
+          "state": {
+            "$ref": "#/components/schemas/cableState"
           }
         }
       },
@@ -27306,15 +27378,6 @@
               "MMOF"
             ]
           },
-          "channels": {
-            "$ref": "#/components/schemas/channels"
-          },
-          "width": {
-            "description": "channel bandwith width",
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 1000
-          },
           "rate": {
             "description": "maximum transmission rate",
             "type": "integer",
@@ -27330,6 +27393,20 @@
               "Tbps"
             ],
             "default": "Gbps"
+          },
+          "states": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "strand": {
+                  "$ref": "#/components/schemas/strand"
+                },
+                "state": {
+                  "$ref": "#/components/schemas/cableState"
+                }
+              }
+            }
           }
         }
       },
@@ -27358,15 +27435,6 @@
               "MMOF"
             ]
           },
-          "channels": {
-            "$ref": "#/components/schemas/channels"
-          },
-          "width": {
-            "description": "channel bandwith width",
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 1000
-          },
           "rate": {
             "description": "maximum transmission rate",
             "type": "integer",
@@ -27382,6 +27450,23 @@
               "Tbps"
             ],
             "default": "Gbps"
+          },
+          "states": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ribbon": {
+                  "$ref": "#/components/schemas/ribbon"
+                },
+                "strand": {
+                  "$ref": "#/components/schemas/strand"
+                },
+                "state": {
+                  "$ref": "#/components/schemas/cableState"
+                }
+              }
+            }
           }
         }
       },
@@ -27392,8 +27477,7 @@
           "free",
           "used",
           "reserved",
-          "faulty",
-          "predicted"
+          "faulty"
         ]
       },
       "cableCapacityState": {
@@ -27592,8 +27676,7 @@
           "free",
           "used",
           "reserved",
-          "faulty",
-          "predicted"
+          "faulty"
         ]
       },
       "ductPurpose": {
@@ -27975,8 +28058,7 @@
           "free",
           "used",
           "reserved",
-          "faulty",
-          "predicted"
+          "faulty"
         ]
       },
       "alertId": {
@@ -28239,8 +28321,7 @@
           "free",
           "used",
           "reserved",
-          "faulty",
-          "predicted"
+          "faulty"
         ]
       },
       "rackId": {
@@ -28372,7 +28453,8 @@
         "enum": [
           "free",
           "used",
-          "reserved"
+          "reserved",
+          "faulty"
         ]
       },
       "workflowEngine": {
