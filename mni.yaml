@@ -15,7 +15,7 @@ info:
     name: Proprietary License
     url: https://www.merkator.com/
     x-copyright: © 2024-2025 Merkator nv/sa. All rights reserved.
-  version: 1.0.0.1761213443
+  version: 1.0.0.1761912735
 externalDocs:
   description: Application User Manual
   url: /mni/v1/doc/html/user-guide/index.html
@@ -4762,6 +4762,43 @@ paths:
                     source: historical
                     probability: 1
                     delete: false
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFound"
+  /duct/cable/{ductId}:
+    get:
+      summary: Get list of cables within specified duct
+      security:
+        - openId:
+            - read:mni_duct
+            - read:mni_ui
+      operationId: getSingleDuctCables
+      tags:
+        - Ducts
+      parameters:
+        - $ref: "#/components/parameters/ductId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    cableId:
+                      $ref: "#/components/schemas/cableId"
+                    point:
+                      $ref: "#/components/schemas/dateTime"
+              examples:
+                sample:
+                  value:
+                    - cableId: 5520aca1-4727-431a-aa9c-23f2e54b8a41
+                      point: 20250509T113205
+        "204":
+          $ref: "#/components/responses/NoContent"
         "401":
           $ref: "#/components/responses/UnauthorizedError"
         "404":
@@ -10335,6 +10372,43 @@ paths:
                     source: historical
                     probability: 1
                     delete: false
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFound"
+  /pole/cable/{poleId}:
+    get:
+      summary: Get list of cables on specified pole
+      security:
+        - openId:
+            - read:mni_pole
+            - read:mni_ui
+      operationId: getSinglePoleCables
+      tags:
+        - Poles
+      parameters:
+        - $ref: "#/components/parameters/poleId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    cableId:
+                      $ref: "#/components/schemas/cableId"
+                    point:
+                      $ref: "#/components/schemas/dateTime"
+              examples:
+                sample:
+                  value:
+                    - cableId: 5520aca1-4727-431a-aa9c-23f2e54b8a41
+                      point: 20250509T113205
+        "204":
+          $ref: "#/components/responses/NoContent"
         "401":
           $ref: "#/components/responses/UnauthorizedError"
         "404":
