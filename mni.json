@@ -17,7 +17,7 @@
       "url": "https://www.merkator.com/",
       "x-copyright": "© 2024-2025 Merkator nv/sa. All rights reserved."
     },
-    "version": "1.0.0.1761912735"
+    "version": "1.0.0.1761929311"
   },
   "externalDocs": {
     "description": "Application User Manual",
@@ -6826,6 +6826,9 @@
                   "country": {
                     "$ref": "#/components/schemas/countryCode"
                   },
+                  "reference": {
+                    "type": "string"
+                  },
                   "cost": {
                     "type": "number",
                     "format": "currency"
@@ -7200,6 +7203,9 @@
                   "country": {
                     "$ref": "#/components/schemas/countryCode"
                   },
+                  "reference": {
+                    "type": "string"
+                  },
                   "cost": {
                     "type": "number",
                     "format": "currency"
@@ -7306,6 +7312,9 @@
                   "country": {
                     "$ref": "#/components/schemas/countryCode"
                   },
+                  "reference": {
+                    "type": "string"
+                  },
                   "cost": {
                     "type": "number",
                     "format": "currency"
@@ -7403,6 +7412,9 @@
                     },
                     "country": {
                       "$ref": "#/components/schemas/countryCode"
+                    },
+                    "reference": {
+                      "type": "string"
                     },
                     "cost": {
                       "type": "number",
@@ -7505,24 +7517,13 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "object",
-                    "properties": {
-                      "cableId": {
-                        "$ref": "#/components/schemas/cableId"
-                      },
-                      "point": {
-                        "$ref": "#/components/schemas/dateTime"
-                      }
-                    }
+                    "$ref": "#/components/schemas/cableId"
                   }
                 },
                 "examples": {
                   "sample": {
                     "value": [
-                      {
-                        "cableId": "5520aca1-4727-431a-aa9c-23f2e54b8a41",
-                        "point": "20250509T113205"
-                      }
+                      "5520aca1-4727-431a-aa9c-23f2e54b8a41"
                     ]
                   }
                 }
@@ -15974,24 +15975,13 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "object",
-                    "properties": {
-                      "cableId": {
-                        "$ref": "#/components/schemas/cableId"
-                      },
-                      "point": {
-                        "$ref": "#/components/schemas/dateTime"
-                      }
-                    }
+                    "$ref": "#/components/schemas/cableId"
                   }
                 },
                 "examples": {
                   "sample": {
                     "value": [
-                      {
-                        "cableId": "5520aca1-4727-431a-aa9c-23f2e54b8a41",
-                        "point": "20250509T113205"
-                      }
+                      "5520aca1-4727-431a-aa9c-23f2e54b8a41"
                     ]
                   }
                 }

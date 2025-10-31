@@ -15,7 +15,7 @@ info:
     name: Proprietary License
     url: https://www.merkator.com/
     x-copyright: © 2024-2025 Merkator nv/sa. All rights reserved.
-  version: 1.0.0.1761912735
+  version: 1.0.0.1761929311
 externalDocs:
   description: Application User Manual
   url: /mni/v1/doc/html/user-guide/index.html
@@ -4358,6 +4358,8 @@ paths:
                   $ref: "#/components/schemas/ductPurpose"
                 country:
                   $ref: "#/components/schemas/countryCode"
+                reference:
+                  type: string
                 cost:
                   type: number
                   format: currency
@@ -4585,6 +4587,8 @@ paths:
                   $ref: "#/components/schemas/trenchId"
                 country:
                   $ref: "#/components/schemas/countryCode"
+                reference:
+                  type: string
                 cost:
                   type: number
                   format: currency
@@ -4656,6 +4660,8 @@ paths:
                   $ref: "#/components/schemas/trenchId"
                 country:
                   $ref: "#/components/schemas/countryCode"
+                reference:
+                  type: string
                 cost:
                   type: number
                   format: currency
@@ -4718,6 +4724,8 @@ paths:
                     $ref: "#/components/schemas/ductId"
                   country:
                     $ref: "#/components/schemas/countryCode"
+                  reference:
+                    type: string
                   cost:
                     type: number
                     format: currency
@@ -4786,17 +4794,11 @@ paths:
               schema:
                 type: array
                 items:
-                  type: object
-                  properties:
-                    cableId:
-                      $ref: "#/components/schemas/cableId"
-                    point:
-                      $ref: "#/components/schemas/dateTime"
+                  $ref: "#/components/schemas/cableId"
               examples:
                 sample:
                   value:
-                    - cableId: 5520aca1-4727-431a-aa9c-23f2e54b8a41
-                      point: 20250509T113205
+                    - 5520aca1-4727-431a-aa9c-23f2e54b8a41
         "204":
           $ref: "#/components/responses/NoContent"
         "401":
@@ -10396,17 +10398,11 @@ paths:
               schema:
                 type: array
                 items:
-                  type: object
-                  properties:
-                    cableId:
-                      $ref: "#/components/schemas/cableId"
-                    point:
-                      $ref: "#/components/schemas/dateTime"
+                  $ref: "#/components/schemas/cableId"
               examples:
                 sample:
                   value:
-                    - cableId: 5520aca1-4727-431a-aa9c-23f2e54b8a41
-                      point: 20250509T113205
+                    - 5520aca1-4727-431a-aa9c-23f2e54b8a41
         "204":
           $ref: "#/components/responses/NoContent"
         "401":
